@@ -62,6 +62,16 @@ ErrorDocument 404 /404.php
 Options -Indexes
 
 # ----------------------------------------------------------------
+# Correct mime types for favicon/webp — some shared-hosting Apache
+# configs don't map these by default, which can make browsers
+# download the file instead of displaying it.
+# ----------------------------------------------------------------
+<IfModule mod_mime.c>
+    AddType image/x-icon .ico
+    AddType image/webp .webp
+</IfModule>
+
+# ----------------------------------------------------------------
 # Browser caching for static assets
 # ----------------------------------------------------------------
 <IfModule mod_expires.c>
@@ -73,6 +83,8 @@ Options -Indexes
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/webp "access plus 1 month"
     ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
 </IfModule>
 
 # ----------------------------------------------------------------
