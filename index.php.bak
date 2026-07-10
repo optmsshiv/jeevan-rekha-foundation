@@ -1,0 +1,375 @@
+<?php
+require_once 'includes/config.php';
+$page_title = 'होम';
+$page_description = 'जीवन रेखा फाउंडेशन — मधेपुरा, बिहार स्थित नशा मुक्ति केंद्र। मेडिकल डिटॉक्स, काउंसलिंग, योग और पारिवारिक सहयोग के साथ सम्मानजनक रिकवरी।';
+$current_page = 'home';
+?>
+<!-- Top Contact Bar — index page only, sits above the shared navbar -->
+<div class="hidden md:block bg-primary text-on-primary">
+    <div class="max-w-site mx-auto px-5 md:px-10 py-2 flex justify-between items-center text-xs font-body">
+        <div class="flex gap-6 items-center">
+            <span class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                24×7 हेल्पलाइन: <?php echo SITE_PHONE_DISPLAY; ?>
+            </span>
+            <span class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                आपातकालीन एडमिशन उपलब्ध
+            </span>
+        </div>
+        <a href="https://wa.me/<?php echo SITE_WHATSAPP; ?>" target="_blank" rel="noopener" class="bg-on-primary/15 px-3 py-1 rounded-full flex items-center gap-2 hover:bg-on-primary/25 transition-colors">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 9.5c.3 2.5 2.5 4.7 5 5" stroke-linecap="round"/></svg>
+            व्हाट्सएप पर लिखें
+        </a>
+    </div>
+</div>
+<?php
+include 'includes/header.php';
+include 'includes/navbar.php';
+?>
+
+<main>
+
+    <!-- HERO -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pt-16 md:pt-20 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="reveal active order-2 md:order-1">
+            <span class="inline-block bg-highlight-gold/15 text-highlight-gold font-body text-xs tracking-[0.1em] px-4 py-2 rounded-card mb-6">
+                बिहार का भरोसेमंद पुनर्वास केंद्र
+            </span>
+            <h1 class="font-headline text-4xl md:text-5xl leading-[1.25] text-on-background mb-6">
+                हर टूटी हुई <span class="text-primary">रेखा</span>,<br>एक नई दिशा बन सकती है।
+            </h1>
+            <p class="font-body text-base md:text-lg text-on-background/70 leading-relaxed max-w-md mb-8">
+                जीवन रेखा फाउंडेशन में हम हर व्यक्ति को नशे से मुक्त जीवन की ओर — चिकित्सकीय देखभाल, सम्मान और पूर्ण गोपनीयता के साथ — वापस ले जाते हैं। यह यात्रा अकेले नहीं तय करनी पड़ती।
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="contact" class="bg-primary text-on-primary px-7 py-3.5 rounded-card font-semibold hover:bg-primary-deep transition-colors">अभी सहायता लें</a>
+                <a href="programs" class="border border-outline-variant text-on-background px-7 py-3.5 rounded-card font-semibold hover:border-primary hover:text-primary transition-colors">प्रोग्राम्स देखें</a>
+            </div>
+        </div>
+
+        <div class="reveal active order-1 md:order-2">
+            <svg viewBox="0 0 480 360" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="एक रेखा जो टूटी हुई शुरुआत से एक स्थिर, शांत रेखा में बदलती है — रिकवरी की यात्रा का प्रतीक">
+                <rect x="0" y="0" width="480" height="360" rx="8" fill="#ddeaf2"/>
+                <path class="rekha-line" d="M40 280 L75 190 L100 260 L130 150 L160 230 L195 140 L230 200 L270 160
+                         C 310 150, 340 130, 380 118
+                         S 430 100, 440 96"
+                      fill="none" stroke="#006953" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="440" cy="96" r="7" fill="#D4AF37"/>
+                <circle cx="40" cy="280" r="5" fill="#924538" opacity="0.6"/>
+                <text x="40" y="310" font-family="Hind, sans-serif" font-size="13" fill="#111d23" opacity="0.55">आज</text>
+                <text x="395" y="82" font-family="Hind, sans-serif" font-size="13" fill="#111d23" opacity="0.55">स्थिरता</text>
+            </svg>
+            <!-- TODO: once real facility photos are ready, this can become a photographic
+                 hero instead — e.g. <img src="assets/img/hero.jpg" class="w-full h-auto rounded-card object-cover"> -->
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="bg-primary">
+        <div class="max-w-site mx-auto px-5 md:px-10 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <p class="font-headline text-3xl text-highlight-gold">500+</p>
+                <p class="font-body text-xs md:text-sm text-on-primary/80 mt-1">परिवारों का भरोसा</p>
+            </div>
+            <div>
+                <p class="font-headline text-3xl text-highlight-gold">24×7</p>
+                <p class="font-body text-xs md:text-sm text-on-primary/80 mt-1">आपातकालीन सहायता</p>
+            </div>
+            <div>
+                <p class="font-headline text-3xl text-highlight-gold">अनुभवी</p>
+                <p class="font-body text-xs md:text-sm text-on-primary/80 mt-1">चिकित्सा एवं परामर्श टीम</p>
+            </div>
+            <div>
+                <p class="font-headline text-3xl text-highlight-gold">100%</p>
+                <p class="font-body text-xs md:text-sm text-on-primary/80 mt-1">गोपनीय देखभाल</p>
+            </div>
+        </div>
+        <!-- NOTE for dev: these are placeholder figures inherited from the site draft.
+             Please confirm/replace with real numbers before launch — for a healthcare
+             service, stats read as factual claims to visitors. -->
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="max-w-site mx-auto px-5 md:px-10 py-24">
+        <div class="text-center max-w-lg mx-auto mb-14 reveal">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">क्यों चुनें</span>
+            <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3">जीवन रेखा फाउंडेशन क्यों?</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="glass-card p-6 md:p-8 rounded-card text-center lift reveal">
+                <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#006953" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                </div>
+                <h3 class="font-headline text-lg text-primary mb-2">24×7 एडमिशन</h3>
+                <p class="font-body text-xs md:text-sm text-on-background/65">चौबीसों घंटे आपातकालीन सहायता उपलब्ध।</p>
+            </div>
+            <div class="glass-card p-6 md:p-8 rounded-card text-center lift reveal">
+                <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#006953" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                </div>
+                <h3 class="font-headline text-lg text-primary mb-2">पूर्ण गोपनीयता</h3>
+                <p class="font-body text-xs md:text-sm text-on-background/65">आपकी निजता हमारी सर्वोच्च प्राथमिकता है।</p>
+            </div>
+            <div class="glass-card p-6 md:p-8 rounded-card text-center lift reveal">
+                <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#006953" stroke-width="2"><path d="M19 14c1.5 0 3-1.5 3-3.5S20.5 7 19 7c-.4-2-2-3.5-4-3.5-1.2 0-2.3.6-3 1.5-.7-.9-1.8-1.5-3-1.5-2 0-3.6 1.5-4 3.5C3.5 7 2 8.5 2 10.5S3.5 14 5 14"/><path d="M8 14v3a4 4 0 0 0 8 0v-3"/></svg>
+                </div>
+                <h3 class="font-headline text-lg text-primary mb-2">अनुभवी टीम</h3>
+                <p class="font-body text-xs md:text-sm text-on-background/65">योग्य चिकित्सक और परामर्शदाताओं की देखरेख।</p>
+            </div>
+            <div class="glass-card p-6 md:p-8 rounded-card text-center lift reveal">
+                <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#006953" stroke-width="2"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7M3 18h18M3 18v2M21 18v2M5 9V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                </div>
+                <h3 class="font-headline text-lg text-primary mb-2">आरामदायक ठहराव</h3>
+                <p class="font-body text-xs md:text-sm text-on-background/65">स्वच्छ, सुरक्षित और सुविधाजनक वातावरण।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT TEASER -->
+    <section class="bg-surface-container-low py-24">
+        <div class="max-w-site mx-auto px-5 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative reveal">
+                <div class="aspect-[4/5] rounded-card bg-surface-container-high flex items-center justify-center relative overflow-hidden border-4 border-white">
+                    <svg width="56" height="56" viewBox="0 0 40 40" class="opacity-25"><path d="M3 30 L9 16 L13 26 L18 12 L22 22 L34 8" stroke="#006953" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="8" r="3" fill="#D4AF37"/></svg>
+                    <span class="absolute bottom-4 right-4 font-body text-[11px] text-on-background/40">फोटो जल्द जोड़ी जाएगी</span>
+                </div>
+                <!-- TODO: replace with <img src="assets/img/about.jpg" alt="काउंसलिंग सत्र" class="w-full h-full object-cover"> -->
+            </div>
+            <div class="reveal">
+                <span class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold">हमारे केंद्र के बारे में</span>
+                <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3 mb-6">विज्ञान और सहानुभूति के साथ उपचार</h2>
+                <p class="font-body text-on-background/70 leading-relaxed mb-8">
+                    जीवन रेखा फाउंडेशन केवल एक पुनर्वास केंद्र नहीं — बदलाव की एक जगह है। हम आधुनिक मनोचिकित्सा को पारंपरिक स्वास्थ्य अभ्यासों के साथ जोड़कर एक बहुआयामी उपचार पद्धति अपनाते हैं।
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+                        <span class="font-body text-sm text-on-background/75">हर एडमिशन से पहले प्रमाणित मनोरोग मूल्यांकन</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+                        <span class="font-body text-sm text-on-background/75">पौष्टिक, संतुलित भोजन शारीरिक रिकवरी के लिए</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+                        <span class="font-body text-sm text-on-background/75">दीर्घकालिक सोबरायटी के लिए व्यक्तिगत आफ्टरकेयर प्लान</span>
+                    </li>
+                </ul>
+                <a href="about" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                    और जानें <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="max-w-site mx-auto px-5 md:px-10 py-24">
+        <div class="max-w-lg mb-14 reveal">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">हमारी सेवाएं</span>
+            <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3">देखभाल के हर चरण के लिए, एक स्पष्ट रास्ता</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-card lift reveal">
+                <h3 class="font-headline text-xl text-primary mb-3">मेडिकल डिटॉक्सिफिकेशन</h3>
+                <p class="font-body text-sm text-on-background/70 leading-relaxed">चिकित्सकों की निगरानी में सुरक्षित और आरामदायक विषहरण प्रक्रिया।</p>
+            </div>
+            <div class="glass-card p-8 rounded-card lift reveal">
+                <h3 class="font-headline text-xl text-primary mb-3">काउंसलिंग व थेरेपी</h3>
+                <p class="font-body text-sm text-on-background/70 leading-relaxed">व्यक्तिगत और समूह सत्रों के माध्यम से मानसिक स्थिरता की ओर कदम।</p>
+            </div>
+            <div class="glass-card p-8 rounded-card lift reveal">
+                <h3 class="font-headline text-xl text-primary mb-3">पारिवारिक सहयोग</h3>
+                <p class="font-body text-sm text-on-background/70 leading-relaxed">परिवार को भी इस यात्रा में समझ और उपकरणों के साथ शामिल किया जाता है।</p>
+            </div>
+        </div>
+        <a href="services" class="inline-flex items-center gap-2 mt-10 text-primary font-semibold hover:gap-3 transition-all">
+            सभी सेवाएं देखें <span aria-hidden="true">→</span>
+        </a>
+    </section>
+
+    <!-- RECOVERY PROCESS TEASER -->
+    <section class="bg-primary py-24">
+        <div class="max-w-site mx-auto px-5 md:px-10">
+            <div class="mb-14 reveal">
+                <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">हमारी प्रक्रिया</span>
+                <h2 class="font-headline text-3xl md:text-4xl text-on-primary mt-3">पहले संपर्क से पूर्ण रिकवरी तक</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative reveal">
+                <div class="hidden md:block absolute top-6 left-[12%] right-[12%] h-[2px] bg-on-primary/20"></div>
+                <div class="relative">
+                    <div class="w-12 h-12 bg-highlight-gold text-on-background rounded-full flex items-center justify-center font-headline font-bold mb-4 relative z-10">01</div>
+                    <h4 class="font-headline text-on-primary mb-1">मूल्यांकन</h4>
+                    <p class="font-body text-xs text-on-primary/70">पूर्ण शारीरिक व मानसिक जाँच।</p>
+                </div>
+                <div class="relative">
+                    <div class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center font-headline font-bold mb-4 relative z-10">02</div>
+                    <h4 class="font-headline text-on-primary mb-1">मेडिकल डिटॉक्स</h4>
+                    <p class="font-body text-xs text-on-primary/70">सुरक्षित, निगरानी में विषहरण।</p>
+                </div>
+                <div class="relative">
+                    <div class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center font-headline font-bold mb-4 relative z-10">03</div>
+                    <h4 class="font-headline text-on-primary mb-1">थेरेपी</h4>
+                    <p class="font-body text-xs text-on-primary/70">व्यक्तिगत व समूह परामर्श।</p>
+                </div>
+                <div class="relative">
+                    <div class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center font-headline font-bold mb-4 relative z-10">04</div>
+                    <h4 class="font-headline text-on-primary mb-1">आफ्टरकेयर</h4>
+                    <p class="font-body text-xs text-on-primary/70">दीर्घकालिक फॉलो-अप सहयोग।</p>
+                </div>
+            </div>
+            <a href="programs" class="inline-flex items-center gap-2 mt-12 text-on-primary font-semibold hover:gap-3 transition-all">
+                पूरी प्रक्रिया देखें <span aria-hidden="true">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FACILITIES PREVIEW -->
+    <section class="max-w-site mx-auto px-5 md:px-10 py-24">
+        <div class="text-center mb-14 reveal">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">हमारा केंद्र</span>
+            <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3">हमारी सुविधाएं</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[520px] reveal">
+            <div class="md:col-span-2 md:row-span-2 relative rounded-card overflow-hidden bg-surface-container-high flex items-end p-6 min-h-[240px]">
+                <svg width="40" height="40" viewBox="0 0 40 40" class="absolute top-6 left-6 opacity-20"><path d="M3 30 L9 16 L13 26 L18 12 L22 22 L34 8" stroke="#006953" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="font-headline text-lg text-on-background relative z-10">शांत परिसर</span>
+            </div>
+            <div class="relative rounded-card overflow-hidden bg-surface-container-high flex items-end p-5 min-h-[140px]">
+                <span class="font-body text-sm text-on-background/70 relative z-10">आरामदायक कक्ष</span>
+            </div>
+            <div class="relative rounded-card overflow-hidden bg-surface-container-high flex items-end p-5 min-h-[140px]">
+                <span class="font-body text-sm text-on-background/70 relative z-10">ध्यान कक्ष</span>
+            </div>
+            <div class="md:col-span-2 relative rounded-card overflow-hidden bg-surface-container-high flex items-end p-5 min-h-[140px]">
+                <span class="font-body text-sm text-on-background/70 relative z-10">वेलनेस क्षेत्र</span>
+            </div>
+        </div>
+        <p class="font-body text-xs text-on-background/40 mt-4">फोटो जल्द जोड़ी जाएगी।</p>
+        <!-- TODO: replace each tile's background with a real photo, e.g.
+             <img src="assets/img/facility-campus.jpg" class="absolute inset-0 w-full h-full object-cover"> -->
+    </section>
+
+    <!-- TEAM (generic roles — replace with real staff before launch) -->
+    <section class="bg-surface-container-low py-24">
+        <div class="max-w-site mx-auto px-5 md:px-10">
+            <div class="text-center max-w-lg mx-auto mb-14 reveal">
+                <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">हमारी टीम</span>
+                <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3">अनुभवी और समर्पित विशेषज्ञ</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 reveal">
+                <div class="text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high flex items-center justify-center mb-5 border-4 border-white">
+                        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3e4945" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+                    </div>
+                    <h4 class="font-headline text-lg text-primary">वरिष्ठ मनोचिकित्सक</h4>
+                    <p class="font-body text-sm text-on-background/60 mt-1">नशा मुक्ति चिकित्सा में विशेषज्ञ</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high flex items-center justify-center mb-5 border-4 border-white">
+                        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3e4945" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+                    </div>
+                    <h4 class="font-headline text-lg text-primary">क्लिनिकल साइकोलॉजिस्ट</h4>
+                    <p class="font-body text-sm text-on-background/60 mt-1">काउंसलिंग व पारिवारिक थेरेपी विशेषज्ञ</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high flex items-center justify-center mb-5 border-4 border-white">
+                        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3e4945" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+                    </div>
+                    <h4 class="font-headline text-lg text-primary">वेलनेस कोच</h4>
+                    <p class="font-body text-sm text-on-background/60 mt-1">योग व समग्र स्वास्थ्य मार्गदर्शन</p>
+                </div>
+            </div>
+            <p class="font-body text-xs text-on-background/40 mt-8 text-center">
+                <!-- TODO: वास्तविक टीम सदस्यों के नाम, योग्यता और तस्वीरें यहां जोड़ें -->
+                वास्तविक टीम की जानकारी जल्द जोड़ी जाएगी।
+            </p>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="max-w-site mx-auto px-5 md:px-10 py-24 reveal">
+        <div class="bg-primary-deep text-on-primary rounded-card p-12 md:p-16 text-center">
+            <p class="font-headline text-2xl md:text-3xl leading-relaxed max-w-2xl mx-auto">
+                "रिकवरी आपकी कहानी का अंत नहीं — एक नए जीवन की <span class="text-highlight-gold">शुरुआत</span> है।"
+            </p>
+            <div class="flex items-center justify-center gap-3 mt-8">
+                <span class="h-px w-10 bg-highlight-gold"></span>
+                <span class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold">जीवन रेखा फाउंडेशन</span>
+                <span class="h-px w-10 bg-highlight-gold"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMERGENCY CTA -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-24 reveal">
+        <div class="bg-gradient-to-br from-primary to-primary-container rounded-card p-12 md:p-16 text-on-primary text-center">
+            <h2 class="font-headline text-2xl md:text-3xl mb-4">तुरंत सहायता चाहिए?</h2>
+            <p class="font-body text-on-primary/80 mb-10 max-w-md mx-auto">आज ही इंतज़ार बंद करें। नशा एक चिकित्सीय आपातकाल है — निःशुल्क गोपनीय बातचीत के साथ आज ही अपनी रिकवरी यात्रा शुरू करें।</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="bg-highlight-gold text-on-background px-8 py-4 rounded-card font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                    कॉल करें: <?php echo SITE_PHONE_DISPLAY; ?>
+                </a>
+                <a href="https://wa.me/<?php echo SITE_WHATSAPP; ?>" target="_blank" rel="noopener" class="bg-on-primary text-primary px-8 py-4 rounded-card font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 9.5c.3 2.5 2.5 4.7 5 5" stroke-linecap="round"/></svg>
+                    व्हाट्सएप पर लिखें
+                </a>
+                <a href="contact" class="bg-primary-container border border-on-primary/30 text-on-primary px-8 py-4 rounded-card font-semibold hover:bg-on-primary/10 transition-colors flex items-center justify-center">
+                    एडमिशन के लिए संपर्क करें
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-24 reveal">
+        <div class="text-center mb-14">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">सामान्य प्रश्न</span>
+            <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3">अक्सर पूछे जाने वाले सवाल</h2>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+            <details class="glass-card rounded-card p-6 group">
+                <summary class="font-headline text-lg text-on-background cursor-pointer list-none flex justify-between items-center gap-4">
+                    क्या उपचार पूरी तरह गोपनीय है?
+                    <span class="text-primary shrink-0 group-open:rotate-180 transition-transform">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <p class="font-body text-sm text-on-background/70 mt-4 leading-relaxed">जी हां, रोगी की गोपनीयता हमारी सर्वोच्च नैतिक प्राथमिकता है। आपकी जानकारी और उपचार पूर्णतः निजी रखे जाते हैं।</p>
+            </details>
+            <details class="glass-card rounded-card p-6 group">
+                <summary class="font-headline text-lg text-on-background cursor-pointer list-none flex justify-between items-center gap-4">
+                    प्रोग्राम की अवधि कितनी होती है?
+                    <span class="text-primary shrink-0 group-open:rotate-180 transition-transform">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <p class="font-body text-sm text-on-background/70 mt-4 leading-relaxed">यह हर व्यक्ति की स्थिति पर निर्भर करता है। मूल्यांकन के बाद हमारी टीम सही अवधि और प्रोग्राम आपको सुझाएगी — <a href="programs" class="text-primary hover:underline">पूरी प्रक्रिया यहां देखें</a>।</p>
+            </details>
+            <details class="glass-card rounded-card p-6 group">
+                <summary class="font-headline text-lg text-on-background cursor-pointer list-none flex justify-between items-center gap-4">
+                    क्या पारिवारिक काउंसलिंग सत्र उपलब्ध हैं?
+                    <span class="text-primary shrink-0 group-open:rotate-180 transition-transform">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <p class="font-body text-sm text-on-background/70 mt-4 leading-relaxed">हां, हमारा पारिवारिक सहयोग कार्यक्रम परिवार को भी रिकवरी यात्रा में शामिल करता है, ताकि घर लौटने पर सही सहारा मिल सके।</p>
+            </details>
+            <details class="glass-card rounded-card p-6 group">
+                <summary class="font-headline text-lg text-on-background cursor-pointer list-none flex justify-between items-center gap-4">
+                    एडमिशन की प्रक्रिया क्या है?
+                    <span class="text-primary shrink-0 group-open:rotate-180 transition-transform">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <p class="font-body text-sm text-on-background/70 mt-4 leading-relaxed">फोन या व्हाट्सएप पर पहली गोपनीय बातचीत से शुरुआत होती है, फिर मूल्यांकन और एडमिशन। <a href="contact" class="text-primary hover:underline">अभी संपर्क करें</a>।</p>
+            </details>
+        </div>
+    </section>
+
+</main>
+
+<?php include 'includes/footer.php'; ?>
