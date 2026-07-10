@@ -39,18 +39,17 @@ include 'includes/navbar.php';
     <section class="relative min-h-[620px] md:min-h-[680px] flex items-center overflow-hidden">
         <div class="absolute inset-0 bg-surface-container-high"></div>
         <img src="assets/img/outer.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary-deep/90 via-primary-deep/60 to-primary-deep/20"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/70 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-deep/60 to-primary-deep/40"></div>
 
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 w-full">
             <div class="max-w-xl reveal active">
                 <span class="inline-flex items-center gap-2 text-highlight-gold font-body text-xs tracking-[0.2em] uppercase mb-6">
                     <span class="h-px w-6 bg-highlight-gold"></span> Bihar's Trusted Rehabilitation Center
                 </span>
-                <h1 class="font-headline text-3xl md:text-5xl leading-[1.25] text-on-primary mb-6">
+                <h1 class="font-headline text-3xl md:text-5xl leading-[1.25] text-on-primary mb-6 text-shadow-hero">
                     Evidence-Based Recovery.<br>Scientific Excellence.
                 </h1>
-                <p class="font-body text-base md:text-lg text-on-primary/85 leading-relaxed mb-10 max-w-md">
+                <p class="font-body text-base md:text-lg text-on-primary/85 leading-relaxed mb-10 max-w-md text-shadow-hero">
                     By combining modern psychiatry with holistic wellness, Jeevan Rekha Foundation offers a clear medical path toward lasting sobriety.
                 </p>
                 <div class="flex flex-wrap gap-4 mb-16">

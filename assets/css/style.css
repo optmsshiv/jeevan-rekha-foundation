@@ -79,6 +79,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     outline-offset: 2px;
 }
 
+/* Text shadow for hero text over photos with a lighter overlay */
+.text-shadow-hero {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
 /* Floating WhatsApp button — injected by main.js on every page */
 .wa-float {
     position: fixed;
