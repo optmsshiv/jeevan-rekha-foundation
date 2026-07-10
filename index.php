@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'Home';
-$page_description = 'Jeevan Rekha Foundation — a de-addiction center in Madhepura, Bihar. Dignified recovery through medical detox, counselling, yoga, and family support.';
+$page_title = 'De-Addiction Center in Madhepura, Bihar';
+$page_description = 'Jeevan Rekha Foundation is a trusted de-addiction and rehabilitation center in Madhepura, Bihar, offering medical detox, counselling, yoga, and family support for lasting recovery.';
 $current_page = 'home';
 ?>
 <!-- Top Contact Bar — index page only, sits above the shared navbar -->
@@ -51,7 +51,7 @@ include 'includes/navbar.php';
                     Evidence-Based Recovery.<br><span class="text-primary">Scientific Excellence.</span>
                 </h1>
                 <p class="font-body text-base md:text-lg text-on-background/70 leading-relaxed mb-10 max-w-md">
-                    By combining modern psychiatry with holistic wellness, Jeevan Rekha Foundation offers a clear medical path toward lasting sobriety.
+                    Bihar's first rehabilitation center built on love and care, Jeevan Rekha Foundation combines modern psychiatry with holistic wellness for a clear medical path toward lasting sobriety.
                 </p>
                 <div class="flex flex-wrap gap-4 mb-16">
                     <a href="contact" class="bg-highlight-gold text-on-background px-7 py-3.5 rounded-card font-semibold hover:bg-highlight-gold/90 transition-colors">Book a Clinical Consult</a>
@@ -82,7 +82,7 @@ include 'includes/navbar.php';
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 pt-8 mt-8 border-t border-outline-variant">
                     <div>
-                        <p class="font-headline text-2xl md:text-3xl text-primary">100+</p>
+                        <p class="font-headline text-2xl md:text-3xl text-primary">500+</p>
                         <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Families Trust Us</p>
                     </div>
                     <div>
@@ -408,6 +408,41 @@ include 'includes/navbar.php';
             </div>
         </div>
     </section>
+
+    <!-- FAQ structured data — must mirror the visible Q&A above -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the average duration of a program?",
+                "acceptedAnswer": { "@type": "Answer", "text": "This depends on each person's situation. After assessment, our team will recommend the right duration." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is 24x7 nursing and medical support available?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, our team is available around the clock so help is always available in an emergency." }
+            },
+            {
+                "@type": "Question",
+                "name": "What items are prohibited at the center?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Safety and treatment guidelines are explained in detail by our team before admission." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can family visit during treatment?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, family involvement is a key part of our process. Please check with our team for specific visiting details." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there support after discharge?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, our aftercare plan supports long-term sobriety through regular follow-up and support groups." }
+            }
+        ]
+    }
+    </script>
 
 </main>
 

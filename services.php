@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'Our Services';
-$page_description = 'Services at Jeevan Rekha Foundation — alcohol de-addiction, drug rehabilitation, medical detox, counselling, yoga, and family support programs.';
+$page_title = 'De-Addiction & Rehabilitation Services';
+$page_description = 'Alcohol de-addiction, drug rehabilitation, medical detox, counselling, yoga, and family support programs at Jeevan Rekha Foundation, Madhepura, Bihar.';
 $current_page = 'services';
 include 'includes/header.php';
 include 'includes/navbar.php';
@@ -80,16 +80,16 @@ $services = [
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
             <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
-                <img src="assets/img/yoga1.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga-1.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
-                <img src="assets/img/yoga2.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga-2.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
-                <img src="assets/img/med1.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga-3.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
-                <img src="assets/img/yoga.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga-4.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
         </div>
     </section>

@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'Contact Us';
-$page_description = 'Contact Jeevan Rekha Foundation — by phone, email, or the form below. Every conversation stays completely confidential.';
+$page_title = 'Contact Us — Free Confidential Consultation';
+$page_description = 'Reach Jeevan Rekha Foundation by phone, WhatsApp, or email for a free, confidential consultation. Located in Madhepura, Bihar with 24x7 support.';
 $current_page = 'contact';
 include 'includes/header.php';
 include 'includes/navbar.php';

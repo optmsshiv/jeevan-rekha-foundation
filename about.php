@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'About Us';
-$page_description = 'The story of Jeevan Rekha Foundation, our approach, and our holistic outlook on de-addiction.';
+$page_title = 'About Us — De-Addiction Center in Bihar';
+$page_description = 'Learn about Jeevan Rekha Foundation\'s mission, values, and holistic approach to de-addiction and rehabilitation in Madhepura, Bihar, founded in 2024.';
 $current_page = 'about';
 include 'includes/header.php';
 include 'includes/navbar.php';
@@ -20,6 +20,17 @@ include 'includes/navbar.php';
                 Our Belief Is Right There in the Name.
             </h1>
         </div>
+    </section>
+
+    <!-- BRAND STATEMENT -->
+    <section class="max-w-site mx-auto px-5 md:px-10 py-16 text-center reveal">
+        <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">What Sets Us Apart</span>
+        <h2 class="font-headline text-2xl md:text-4xl text-on-background mt-3 max-w-3xl mx-auto leading-[1.35]">
+            Bihar's first rehabilitation center built on <span class="text-primary">love and care</span> — not judgment.
+        </h2>
+        <p class="font-body text-on-background/65 mt-5 max-w-xl mx-auto leading-relaxed">
+            We believe treatment works best when it starts from compassion. Every program at Jeevan Rekha Foundation is designed around this simple idea.
+        </p>
     </section>
 
     <!-- FOUNDING INFO STRIP -->
@@ -197,7 +208,7 @@ include 'includes/navbar.php';
                 <img src="assets/img/gate.jpeg" alt="Entrance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
-                <img src="assets/img/yoga2.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga-1.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
                 <img src="assets/img/room1.jpeg" alt="Patient room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
@@ -269,6 +280,31 @@ include 'includes/navbar.php';
             </div>
         </div>
     </section>
+
+    <!-- FAQ structured data — must mirror the visible Q&A above -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Jeevan Rekha Foundation only for people from Madhepura?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No, we welcome families from across Bihar and beyond. Support is available for those coming from far away too." }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I only reach out for severe cases?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No, seeking help early is often the most effective. From mild to severe, we have a program for every situation." }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to visit the center for the first conversation?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No, the first conversation can happen over phone or WhatsApp too. Visiting the center is only necessary at the time of admission." }
+            }
+        ]
+    }
+    </script>
 
     <!-- CTA -->
     <section class="max-w-site mx-auto px-5 md:px-10 py-24 reveal">

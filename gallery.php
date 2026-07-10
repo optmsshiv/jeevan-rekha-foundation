@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'Gallery';
-$page_description = 'A glimpse of the Jeevan Rekha Foundation center — our facilities and environment.';
+$page_title = 'Gallery — Our Center in Madhepura';
+$page_description = 'A photo tour of Jeevan Rekha Foundation\'s de-addiction center in Madhepura, Bihar — patient rooms, meditation areas, and campus facilities.';
 $current_page = 'gallery';
 include 'includes/header.php';
 include 'includes/navbar.php';
