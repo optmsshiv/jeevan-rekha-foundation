@@ -24,6 +24,15 @@ define('SITE_ADDRESS_COUNTRY', 'IN');
 define('SITE_WHATSAPP', '919296785775');
 define('SITE_MAPS_URL', 'https://www.google.com/maps/search/?api=1&query=' . urlencode(SITE_ADDRESS));
 
+// Second location — Purnia branch
+define('BRANCH2_NAME', 'Purnia Branch');
+define('BRANCH2_ADDRESS', 'Mehata Chowk, Madhubani, Purnia');
+define('BRANCH2_PHONE1_DISPLAY', '72501 26500');
+define('BRANCH2_PHONE1_TEL', '+917250126500');
+define('BRANCH2_PHONE2_DISPLAY', '75429 59002');
+define('BRANCH2_PHONE2_TEL', '+917542959002');
+define('BRANCH2_MAPS_URL', 'https://www.google.com/maps/search/?api=1&query=' . urlencode(BRANCH2_ADDRESS));
+
 // Social links — footer icons. TODO: replace # with real profile URLs, or
 // remove the corresponding <a> block in includes/footer.php if a platform isn't used.
 define('SITE_FACEBOOK', '#');

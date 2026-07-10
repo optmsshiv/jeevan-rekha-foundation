@@ -65,38 +65,86 @@ include 'includes/navbar.php';
         </div>
     </section>
 
+    <!-- OUR LOCATIONS -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-16">
+        <div class="mb-10 reveal">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Visit Us</span>
+            <h2 class="font-headline text-2xl md:text-3xl text-on-background mt-3">Our Locations</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Madhepura — main center -->
+            <div class="glass-card rounded-card p-8 reveal">
+                <span class="inline-block bg-primary/10 text-primary font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Main Center</span>
+                <h3 class="font-headline text-xl text-on-background mb-4">Madhepura</h3>
+                <div class="flex flex-col gap-3 mb-6">
+                    <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        <?php echo SITE_PHONE_DISPLAY; ?>
+                    </a>
+                    <span class="font-body text-sm text-on-background/80 flex items-start gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <?php echo SITE_ADDRESS; ?>
+                    </span>
+                </div>
+                <div class="aspect-[4/3] rounded-card overflow-hidden">
+                    <iframe
+                        src="https://maps.google.com/maps?q=<?php echo urlencode(SITE_ADDRESS); ?>&z=15&output=embed"
+                        class="w-full h-full border-0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="<?php echo SITE_NAME; ?> — Madhepura map location">
+                    </iframe>
+                </div>
+                <a href="<?php echo SITE_MAPS_URL; ?>" target="_blank" rel="noopener" class="font-body text-sm text-primary hover:underline mt-3 inline-block">View on Google Maps →</a>
+            </div>
+
+            <!-- Purnia branch -->
+            <div class="glass-card rounded-card p-8 reveal">
+                <span class="inline-block bg-highlight-gold/15 text-highlight-gold font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Branch</span>
+                <h3 class="font-headline text-xl text-on-background mb-4"><?php echo BRANCH2_NAME; ?></h3>
+                <div class="flex flex-col gap-3 mb-6">
+                    <a href="tel:<?php echo BRANCH2_PHONE1_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        <?php echo BRANCH2_PHONE1_DISPLAY; ?>
+                    </a>
+                    <a href="tel:<?php echo BRANCH2_PHONE2_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        <?php echo BRANCH2_PHONE2_DISPLAY; ?>
+                    </a>
+                    <span class="font-body text-sm text-on-background/80 flex items-start gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <?php echo BRANCH2_ADDRESS; ?>
+                    </span>
+                </div>
+                <div class="aspect-[4/3] rounded-card overflow-hidden">
+                    <iframe
+                        src="https://maps.google.com/maps?q=<?php echo urlencode(BRANCH2_ADDRESS); ?>&z=15&output=embed"
+                        class="w-full h-full border-0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="<?php echo SITE_NAME; ?> — Purnia branch map location">
+                    </iframe>
+                </div>
+                <a href="<?php echo BRANCH2_MAPS_URL; ?>" target="_blank" rel="noopener" class="font-body text-sm text-primary hover:underline mt-3 inline-block">View on Google Maps →</a>
+            </div>
+
+        </div>
+    </section>
+
     <section class="max-w-site mx-auto px-5 md:px-10 pb-24 grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12">
 
         <!-- CONTACT INFO -->
         <div class="reveal flex flex-col gap-8">
             <div>
-                <h3 class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold mb-2">Phone</h3>
-                <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="font-headline text-xl text-primary"><?php echo SITE_PHONE_DISPLAY; ?></a>
-            </div>
-            <div>
                 <h3 class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold mb-2">Email</h3>
                 <a href="mailto:<?php echo SITE_EMAIL; ?>" class="font-headline text-xl text-primary break-all"><?php echo SITE_EMAIL; ?></a>
-            </div>
-            <div>
-                <h3 class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold mb-2">Address</h3>
-                <p class="font-body text-on-background/80"><?php echo SITE_ADDRESS; ?></p>
             </div>
             <div>
                 <h3 class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold mb-2">WhatsApp</h3>
                 <a href="https://wa.me/<?php echo SITE_WHATSAPP; ?>" target="_blank" rel="noopener" class="font-headline text-xl text-primary">Message us on WhatsApp</a>
             </div>
-
-            <!-- Map: embedded via public Google Maps search embed (no API key needed) -->
-            <div class="aspect-[4/3] rounded-card overflow-hidden glass-card">
-                <iframe
-                    src="https://maps.google.com/maps?q=<?php echo urlencode(SITE_ADDRESS); ?>&z=15&output=embed"
-                    class="w-full h-full border-0"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="<?php echo SITE_NAME; ?> — map location">
-                </iframe>
-            </div>
-            <a href="<?php echo SITE_MAPS_URL; ?>" target="_blank" rel="noopener" class="font-body text-sm text-primary hover:underline w-fit">View on Google Maps →</a>
+            <p class="font-body text-sm text-on-background/60 leading-relaxed">Prefer to reach a specific center directly? Use the phone numbers listed under "Our Locations" above.</p>
         </div>
 
         <!-- CONTACT FORM — submits to api/contact.php (validates, logs to
