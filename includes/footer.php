@@ -7,7 +7,7 @@ $services_list = [
     'Yoga & Meditation',
 ];
 ?>
-<footer class="w-full bg-[#263238] text-white mt-32">
+<footer class="w-full bg-[#263238] text-white">
     <div class="max-w-site mx-auto px-5 md:px-10 pt-16 pb-10 grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr_1fr_1fr] gap-10 border-b border-white/10">
 
         <!-- Brand -->
@@ -78,6 +78,13 @@ $services_list = [
         <div class="flex gap-6">
             <a href="privacy" class="hover:text-white/70 transition-colors">Privacy Policy</a>
             <a href="terms" class="hover:text-white/70 transition-colors">Terms of Service</a>
+        </div>
+    </div>
+    <div class="border-t border-white/10">
+        <div class="max-w-site mx-auto px-5 md:px-10 py-3 text-center">
+            <span class="font-body text-sm text-white/50">
+                Designed &amp; Developed by <a href="https://optms.co.in" target="_blank" rel="noopener" class="text-white/60 hover:text-highlight-gold transition-colors font-medium">OPTMS Tech</a>
+            </span>
         </div>
     </div>
 </footer>

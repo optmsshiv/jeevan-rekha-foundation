@@ -176,3 +176,11 @@ if (!isset($og_image)) { $og_image = rtrim(SITE_URL, '/') . '/assets/img/outer.j
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gradient-to-b from-surface-white via-background to-sky-tint/30 text-on-background font-body antialiased overflow-x-hidden" data-whatsapp="<?php echo SITE_WHATSAPP; ?>">
+
+<!-- Loading screen — hidden by main.js once the page has fully loaded -->
+<div id="page-loader" class="fixed inset-0 z-[999] bg-background flex items-center justify-center">
+    <div class="relative w-24 h-24 flex items-center justify-center">
+        <span class="loader-ring absolute inset-0 rounded-full border-4 border-primary/15 border-t-primary" aria-hidden="true"></span>
+        <img src="assets/img/logo.jpeg" alt="<?php echo SITE_NAME; ?>" class="w-16 h-16 object-contain rounded-full" onerror="this.style.display='none'">
+    </div>
+</div>

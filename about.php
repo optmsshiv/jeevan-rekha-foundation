@@ -12,7 +12,7 @@ include 'includes/navbar.php';
     <!-- HERO -->
     <section class="relative min-h-[380px] md:min-h-[440px] flex items-end overflow-hidden">
         <div class="absolute inset-0 bg-surface-container-high"></div>
-        <img src="assets/img/room2.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        <img src="assets/img/med1.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/60 to-primary-deep/20"></div>
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 pb-12 md:pb-16 w-full reveal active">
             <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">About Us</span>
@@ -208,10 +208,72 @@ include 'includes/navbar.php';
                 <img src="assets/img/gate.jpeg" alt="Entrance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
-                <img src="assets/img/yoga-1.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga1.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
                 <img src="assets/img/room1.jpeg" alt="Patient room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP & VOLUNTEERS -->
+    <!-- Photo naming convention: assets/img/partner.jpeg, volunteer-1.jpeg through
+         volunteer-6.jpeg. Upload photos with these exact filenames and they'll
+         appear automatically. Replace the [Add Name] placeholders with real
+         names/roles once confirmed — no other code changes needed. -->
+    <section class="relative bg-gradient-to-br from-primary via-primary-container to-primary-deep py-24 overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-highlight-gold/20 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-white/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl"></div>
+
+        <div class="relative z-10 max-w-site mx-auto px-5 md:px-10">
+            <div class="text-center max-w-lg mx-auto mb-16 reveal">
+                <span class="inline-flex items-center gap-2 bg-white/15 text-highlight-gold font-body text-xs tracking-[0.25em] uppercase font-semibold px-4 py-2 rounded-full">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="#D4AF37"><path d="M12 2l2.9 6.5L22 9.3l-5 4.9 1.2 7.1L12 17.8l-6.2 3.5L7 14.2 2 9.3l7.1-.8z"/></svg>
+                    People Behind Jeevan Rekha
+                </span>
+                <h2 class="font-headline text-3xl md:text-4xl text-on-primary mt-4">Leadership & Volunteers</h2>
+            </div>
+
+            <!-- Business partner — featured -->
+            <div class="max-w-xs mx-auto mb-16 reveal">
+                <div class="text-center">
+                    <div class="relative w-48 h-48 mx-auto mb-5">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-highlight-gold via-highlight-gold/60 to-highlight-gold p-1.5">
+                            <div class="w-full h-full rounded-full bg-primary-deep overflow-hidden relative">
+                                <img src="assets/img/partner.jpeg" alt="Co-Founder &amp; Director" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                            </div>
+                        </div>
+                        <span class="absolute -bottom-1 -right-1 w-11 h-11 bg-highlight-gold rounded-full flex items-center justify-center border-4 border-primary shadow-lg">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="#14231C"><path d="M12 2l2.9 6.5L22 9.3l-5 4.9 1.2 7.1L12 17.8l-6.2 3.5L7 14.2 2 9.3l7.1-.8z"/></svg>
+                        </span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-card px-6 py-4 inline-block">
+                        
+                        <p class="font-body text-sm text-highlight-gold mt-1 font-semibold">Co-Founder &amp; Director</p>
+                        <a href="tel:<?php echo COFOUNDER_PHONE_TEL; ?>" class="font-body text-xs text-on-primary/80 mt-2 flex items-center justify-center gap-1.5 hover:text-on-primary transition-colors">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                            <?php echo COFOUNDER_PHONE_DISPLAY; ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volunteers -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 reveal">
+                <?php
+                $ring_colors = ['#D4AF37', '#ffffff', '#94f5d6', '#D4AF37', '#ffffff', '#94f5d6'];
+                for ($i = 1; $i <= 6; $i++):
+                ?>
+                <div class="text-center">
+                    <div class="w-28 h-28 mx-auto rounded-full p-1 mb-4" style="background: <?php echo $ring_colors[$i - 1]; ?>;">
+                        <div class="w-full h-full rounded-full bg-primary-deep overflow-hidden relative">
+                            <img src="assets/img/volunteer-<?php echo $i; ?>.jpeg" alt="Volunteer <?php echo $i; ?>" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    
+                    <span class="inline-block bg-white/15 text-highlight-gold font-body text-[10px] font-semibold px-2.5 py-1 rounded-full mt-1 tracking-wide uppercase">Volunteer</span>
+                </div>
+                <?php endfor; ?>
             </div>
         </div>
     </section>

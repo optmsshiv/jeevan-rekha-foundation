@@ -9,6 +9,9 @@ define('SITE_TAGLINE', 'De-Addiction Center');
 define('SITE_URL', 'https://rekhafoundation.com');
 define('SITE_PHONE_DISPLAY', '92967 85775');
 define('SITE_PHONE_TEL', '+919296785775');
+// Direct number for the Co-Founder & Director — shown on their profile card on the About page.
+define('COFOUNDER_PHONE_DISPLAY', '76317 65802');
+define('COFOUNDER_PHONE_TEL', '+917631765802');
 define('SITE_EMAIL', 'care@rekhafoundation.com');
 define('SITE_ADDRESS', 'Purvi Bypass Road, Jaipalpatti, Front of Honda Showroom, Madhepura, Bihar - 852113');
 // Structured address parts — used for SEO schema markup (JSON-LD) in includes/header.php.
@@ -34,6 +37,7 @@ define('SITE_YOUTUBE', '#');
 $NAV_ITEMS = [
     'home'     => ['label' => 'Home',        'href' => './'],
     'about'    => ['label' => 'About Us',    'href' => 'about'],
+    'approach' => ['label' => 'Our Approach','href' => 'approach'],
     'services' => ['label' => 'Services',    'href' => 'services'],
     'programs' => ['label' => 'Programs',    'href' => 'programs'],
     'gallery'  => ['label' => 'Gallery',     'href' => 'gallery'],

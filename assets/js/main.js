@@ -1,5 +1,31 @@
 // Rekha Foundation — shared behaviour across all pages
 
+// Page loader — hide once everything (including images) has finished loading.
+// A small minimum-visible-time avoids an ugly flash on fast connections.
+(function () {
+    var loader = document.getElementById('page-loader');
+    if (!loader) return;
+    var minVisibleMs = 400;
+    var start = Date.now();
+
+    function hideLoader() {
+        var elapsed = Date.now() - start;
+        var wait = Math.max(0, minVisibleMs - elapsed);
+        setTimeout(function () {
+            loader.classList.add('loader-hidden');
+        }, wait);
+    }
+
+    if (document.readyState === 'complete') {
+        hideLoader();
+    } else {
+        window.addEventListener('load', hideLoader);
+        // Safety net: never let the loader block the site for more than 4s
+        // (e.g. a slow or missing image), even if the load event is delayed.
+        setTimeout(hideLoader, 4000);
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // Floating WhatsApp button — appears on every page.
