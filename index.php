@@ -40,7 +40,6 @@ include 'includes/navbar.php';
         <div class="absolute inset-0 bg-surface-container-high"></div>
         <img src="assets/img/outer.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-r from-primary-deep/75 via-primary-deep/45 to-primary-deep/20"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/55 via-transparent to-transparent"></div>
 
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 w-full">
             <div class="max-w-xl reveal active">
