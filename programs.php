@@ -39,7 +39,7 @@ $stages = [
     <!-- HERO -->
     <section class="relative min-h-[380px] md:min-h-[440px] flex items-end overflow-hidden">
         <div class="absolute inset-0 bg-surface-container-high"></div>
-        <img src="assets/img/yoga.jpeg" alt="Therapy session" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        <img src="assets/img/yoga2.jpeg" alt="Therapy session" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/60 to-primary-deep/20"></div>
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 pb-12 md:pb-16 w-full reveal active">
             <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Programs</span>

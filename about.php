@@ -197,7 +197,7 @@ include 'includes/navbar.php';
                 <img src="assets/img/gate.jpeg" alt="Entrance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
-                <img src="assets/img/yoga.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga2.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
                 <img src="assets/img/room1.jpeg" alt="Patient room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">

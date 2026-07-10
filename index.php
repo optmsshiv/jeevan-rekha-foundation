@@ -35,44 +35,67 @@ include 'includes/navbar.php';
 
 <main>
 
-    <!-- HERO — full-bleed photo with a shaded overlay for text legibility -->
+    <!-- HERO — full-bleed photo with a light wash overlay (left to right) for text legibility -->
     <section class="relative min-h-[620px] md:min-h-[680px] flex items-center overflow-hidden">
         <div class="absolute inset-0 bg-surface-container-high"></div>
         <img src="assets/img/outer.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary-deep/75 via-primary-deep/45 to-primary-deep/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/20"></div>
 
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 w-full">
             <div class="max-w-xl reveal active">
-                <span class="inline-flex items-center gap-2 text-highlight-gold font-body text-xs tracking-[0.2em] uppercase mb-6">
-                    <span class="h-px w-6 bg-highlight-gold"></span> Bihar's Trusted Rehabilitation Center
+                <span class="inline-flex items-center gap-2 bg-white shadow-sm text-on-background font-body text-xs font-semibold px-4 py-2.5 rounded-full mb-6">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#924538" stroke-width="2.5" class="shrink-0"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                    24×7 Emergency Admission Available
                 </span>
-                <h1 class="font-headline text-3xl md:text-5xl leading-[1.25] text-on-primary mb-6 text-shadow-hero">
-                    Evidence-Based Recovery.<br>Scientific Excellence.
+                <h1 class="font-headline text-3xl md:text-5xl leading-[1.25] text-on-background mb-6">
+                    Evidence-Based Recovery.<br><span class="text-primary">Scientific Excellence.</span>
                 </h1>
-                <p class="font-body text-base md:text-lg text-on-primary/85 leading-relaxed mb-10 max-w-md text-shadow-hero">
+                <p class="font-body text-base md:text-lg text-on-background/70 leading-relaxed mb-10 max-w-md">
                     By combining modern psychiatry with holistic wellness, Jeevan Rekha Foundation offers a clear medical path toward lasting sobriety.
                 </p>
                 <div class="flex flex-wrap gap-4 mb-16">
                     <a href="contact" class="bg-highlight-gold text-on-background px-7 py-3.5 rounded-card font-semibold hover:bg-highlight-gold/90 transition-colors">Book a Clinical Consult</a>
-                    <a href="services" class="border border-on-primary/40 text-on-primary px-7 py-3.5 rounded-card font-semibold hover:bg-on-primary/10 transition-colors">View Treatment Plans</a>
+                    <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="bg-primary text-on-primary px-7 py-3.5 rounded-card font-semibold hover:bg-primary-deep transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        Call Now
+                    </a>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 pt-8 border-t border-on-primary/20">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3">
+                    <div class="flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#006953" class="shrink-0"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="font-body text-sm text-on-background/80">Medical Detox</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#006953" class="shrink-0"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="font-body text-sm text-on-background/80">Counselling</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#006953" class="shrink-0"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="font-body text-sm text-on-background/80">Family Support</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#006953" class="shrink-0"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="font-body text-sm text-on-background/80">Aftercare</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 pt-8 mt-8 border-t border-outline-variant">
                     <div>
-                        <p class="font-headline text-2xl md:text-3xl text-highlight-gold">500+</p>
-                        <p class="font-body text-[10px] md:text-xs text-on-primary/70 uppercase tracking-widest mt-1">Families Trust Us</p>
+                        <p class="font-headline text-2xl md:text-3xl text-primary">500+</p>
+                        <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Families Trust Us</p>
                     </div>
                     <div>
-                        <p class="font-headline text-2xl md:text-3xl text-highlight-gold">24×7</p>
-                        <p class="font-body text-[10px] md:text-xs text-on-primary/70 uppercase tracking-widest mt-1">Medical Support</p>
+                        <p class="font-headline text-2xl md:text-3xl text-primary">24×7</p>
+                        <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Medical Support</p>
                     </div>
                     <div>
-                        <p class="font-headline text-2xl md:text-3xl text-highlight-gold">Experienced</p>
-                        <p class="font-body text-[10px] md:text-xs text-on-primary/70 uppercase tracking-widest mt-1">Medical Team</p>
+                        <p class="font-headline text-2xl md:text-3xl text-primary">Experienced</p>
+                        <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Medical Team</p>
                     </div>
                     <div>
-                        <p class="font-headline text-2xl md:text-3xl text-highlight-gold">100%</p>
-                        <p class="font-body text-[10px] md:text-xs text-on-primary/70 uppercase tracking-widest mt-1">Confidential</p>
+                        <p class="font-headline text-2xl md:text-3xl text-primary">100%</p>
+                        <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Confidential</p>
                     </div>
                 </div>
                 <!-- NOTE for dev: confirm/replace these figures with real numbers before

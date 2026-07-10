@@ -8,7 +8,7 @@ if (!isset($current_page)) { $current_page = ''; }
         <a href="./" class="flex items-center gap-3 group">
             <img src="assets/img/logo.jpeg" alt="<?php echo SITE_NAME; ?> Logo" class="h-14 w-14 object-contain shrink-0">
             <div class="flex flex-col leading-none">
-                <span class="font-headline text-xl text-primary"><?php echo SITE_NAME; ?></span>
+                <span class="font-headline font-bold uppercase tracking-wide text-xl text-primary"><?php echo SITE_NAME; ?></span>
                 <span class="font-body text-[11px] tracking-[0.15em] text-on-background/50 uppercase mt-1"><?php echo SITE_TAGLINE; ?></span>
             </div>
         </a>

@@ -69,6 +69,31 @@ $services = [
         <?php endforeach; ?>
     </section>
 
+    <!-- YOGA & MEDITATION STRIP -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 reveal">
+            <div>
+                <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">A Closer Look</span>
+                <h2 class="font-headline text-2xl md:text-3xl text-on-background mt-2">Yoga & Meditation at Our Center</h2>
+            </div>
+            <a href="gallery" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all whitespace-nowrap">View Full Gallery <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+            <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
+                <img src="assets/img/yoga1.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+            </div>
+            <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
+                <img src="assets/img/yoga2.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+            </div>
+            <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
+                <img src="assets/img/med1.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+            </div>
+            <div class="aspect-square rounded-card overflow-hidden relative group bg-surface-container-high">
+                <img src="assets/img/yoga.jpeg" alt="Yoga and meditation session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
     <!-- HOW IT WORKS TEASER -->
     <section class="bg-surface-container-low py-24">
         <div class="max-w-site mx-auto px-5 md:px-10">
