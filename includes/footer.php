@@ -1,10 +1,10 @@
 <?php
 $services_list = [
-    'शराब मुक्ति उपचार',
-    'ड्रग रिहैबिलिटेशन',
-    'मेडिकल डिटॉक्सिफिकेशन',
-    'काउंसलिंग व थेरेपी',
-    'योग व ध्यान',
+    'Alcohol De-Addiction',
+    'Drug Rehabilitation',
+    'Medical Detoxification',
+    'Counselling & Therapy',
+    'Yoga & Meditation',
 ];
 ?>
 <footer class="w-full bg-[#263238] text-white mt-32">
@@ -13,11 +13,11 @@ $services_list = [
         <!-- Brand -->
         <div class="flex flex-col gap-4">
             <div class="flex items-center gap-3">
-                <img src="assets/img/logo.jpeg" alt="<?php echo SITE_NAME; ?> लोगो" class="h-10 w-10 object-contain shrink-0 rounded-full bg-white">
+                <img src="assets/img/logo.jpeg" alt="<?php echo SITE_NAME; ?> Logo" class="h-10 w-10 object-contain shrink-0 rounded-full bg-white">
                 <span class="font-headline text-lg"><?php echo SITE_NAME; ?></span>
             </div>
             <p class="font-body text-sm text-white/65 leading-relaxed max-w-xs">
-                मेडिकल देखभाल, काउंसलिंग और परिवार के सहयोग से नशा मुक्ति की ओर सम्मानजनक रास्ता।
+                A dignified path to recovery, through medical care, counselling, and family support.
             </p>
             <div class="flex gap-2.5">
                 <a href="<?php echo SITE_FACEBOOK; ?>" aria-label="Facebook" class="w-9 h-9 rounded-full bg-[#1F8A70]/[.18] flex items-center justify-center text-[#1F8A70] hover:bg-[#1F8A70]/30 transition-colors">
@@ -37,7 +37,7 @@ $services_list = [
 
         <!-- Pages -->
         <div class="flex flex-col gap-3">
-            <h4 class="font-body text-[11px] tracking-[0.15em] uppercase text-[#1F8A70] mb-1">पेज</h4>
+            <h4 class="font-body text-[11px] tracking-[0.15em] uppercase text-[#1F8A70] mb-1">Pages</h4>
             <?php foreach ($NAV_ITEMS as $item): ?>
                 <a href="<?php echo $item['href']; ?>" class="font-body text-sm text-white/70 hover:text-white transition-colors w-fit"><?php echo $item['label']; ?></a>
             <?php endforeach; ?>
@@ -45,7 +45,7 @@ $services_list = [
 
         <!-- Services -->
         <div class="flex flex-col gap-3">
-            <h4 class="font-body text-[11px] tracking-[0.15em] uppercase text-[#1F8A70] mb-1">हमारी सेवाएं</h4>
+            <h4 class="font-body text-[11px] tracking-[0.15em] uppercase text-[#1F8A70] mb-1">Our Services</h4>
             <?php foreach ($services_list as $service): ?>
                 <a href="services" class="font-body text-sm text-white/70 hover:text-white transition-colors w-fit"><?php echo $service; ?></a>
             <?php endforeach; ?>
@@ -53,7 +53,7 @@ $services_list = [
 
         <!-- Contact -->
         <div class="flex flex-col gap-3">
-            <h4 class="font-body text-[11px] tracking-[0.15em] uppercase text-[#1F8A70] mb-1">संपर्क</h4>
+            <h4 class="font-body text-[11px] tracking-[0.15em] uppercase text-[#1F8A70] mb-1">Contact</h4>
             <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="font-body text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#1F8A70" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
                 <?php echo SITE_PHONE_DISPLAY; ?>
@@ -68,16 +68,16 @@ $services_list = [
             </span>
             <span class="font-body text-sm text-white/70 flex items-center gap-2">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#B86254" stroke-width="2" class="shrink-0"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-                24×7 उपलब्ध
+                Available 24×7
             </span>
         </div>
     </div>
 
     <div class="max-w-site mx-auto px-5 md:px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-white/45 font-body">
-        <span>© <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. सर्वाधिकार सुरक्षित।</span>
+        <span>© <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. All rights reserved.</span>
         <div class="flex gap-6">
-            <a href="#" class="hover:text-white/70 transition-colors">गोपनीयता नीति</a>
-            <a href="#" class="hover:text-white/70 transition-colors">नियम व शर्तें</a>
+            <a href="privacy" class="hover:text-white/70 transition-colors">Privacy Policy</a>
+            <a href="terms" class="hover:text-white/70 transition-colors">Terms of Service</a>
         </div>
     </div>
 </footer>

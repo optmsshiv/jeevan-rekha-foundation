@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         waLink.target = '_blank';
         waLink.rel = 'noopener';
         waLink.className = 'wa-float';
-        waLink.setAttribute('aria-label', 'व्हाट्सएप पर लिखें');
-        waLink.setAttribute('title', 'व्हाट्सएप पर लिखें');
+        waLink.setAttribute('aria-label', 'Message us on WhatsApp');
+        waLink.setAttribute('title', 'Message us on WhatsApp');
         waLink.innerHTML =
             '<span class="wa-float-ring" aria-hidden="true"></span>' +
             '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" style="position:relative;z-index:1">' +
@@ -49,25 +49,49 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Contact form — client-side feedback only.
-    // NOTE for dev: wire this up to a PHP mail handler / API endpoint
-    // before going live (see contact.php comment block).
+    // Contact form — submits to api/contact.php via fetch, shows real
+    // success/error feedback based on the server's JSON response.
     var contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             var btn = contactForm.querySelector('button[type="submit"]');
+            var errorEl = document.getElementById('contact-form-error');
             var original = btn.innerText;
-            btn.innerText = 'भेजा जा रहा है...';
+
+            if (errorEl) {
+                errorEl.classList.add('hidden');
+                errorEl.innerText = '';
+            }
+            btn.innerText = 'Sending...';
             btn.disabled = true;
-            setTimeout(function () {
-                btn.innerText = 'धन्यवाद! हम जल्द संपर्क करेंगे';
-                contactForm.reset();
-                setTimeout(function () {
+
+            fetch(contactForm.getAttribute('action'), {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+                .then(function (result) {
+                    if (result.ok && result.data.success) {
+                        btn.innerText = 'Thank you! We will contact you soon';
+                        contactForm.reset();
+                        setTimeout(function () {
+                            btn.innerText = original;
+                            btn.disabled = false;
+                        }, 4000);
+                    } else {
+                        throw new Error(result.data.message || 'Something went wrong. Please try again.');
+                    }
+                })
+                .catch(function (err) {
+                    if (errorEl) {
+                        errorEl.innerText = err.message || 'Something went wrong. Please try again, or contact us directly by phone/WhatsApp.';
+                        errorEl.classList.remove('hidden');
+                    }
                     btn.innerText = original;
                     btn.disabled = false;
-                }, 3000);
-            }, 800);
+                });
         });
     }
 });

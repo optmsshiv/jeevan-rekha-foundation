@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'गैलरी';
-$page_description = 'जीवन रेखा फाउंडेशन केंद्र की झलक — हमारी सुविधाएं और वातावरण।';
+$page_title = 'Gallery';
+$page_description = 'A glimpse of the Jeevan Rekha Foundation center — our facilities and environment.';
 $current_page = 'gallery';
 include 'includes/header.php';
 include 'includes/navbar.php';
@@ -9,12 +9,12 @@ include 'includes/navbar.php';
 // Each entry maps to an actual uploaded photo. If a file is missing, onerror
 // hides the <img> and the caption still shows over the placeholder background.
 $items = [
-    ['file' => 'gate.jpeg',  'caption' => 'केंद्र का प्रवेश द्वार'],
-    ['file' => 'admin.jpeg', 'caption' => 'काउंसलिंग कक्ष'],
-    ['file' => 'yoga.jpeg',  'caption' => 'योग व ध्यान क्षेत्र'],
-    ['file' => 'room1.jpeg', 'caption' => 'रोगी कक्ष'],
-    ['file' => 'room2.jpeg', 'caption' => 'सामुदायिक हॉल'],
-    ['file' => 'outer.jpeg', 'caption' => 'बगीचा व खुला स्थान'],
+    ['file' => 'gate.jpeg',  'caption' => 'Center Entrance'],
+    ['file' => 'admin.jpeg', 'caption' => 'Counselling Room'],
+    ['file' => 'yoga.jpeg',  'caption' => 'Yoga & Meditation Area'],
+    ['file' => 'room1.jpeg', 'caption' => 'Patient Room'],
+    ['file' => 'room2.jpeg', 'caption' => 'Community Hall'],
+    ['file' => 'outer.jpeg', 'caption' => 'Garden & Open Space'],
 ];
 ?>
 
@@ -23,12 +23,12 @@ $items = [
     <!-- HERO -->
     <section class="relative min-h-[380px] md:min-h-[440px] flex items-end overflow-hidden">
         <div class="absolute inset-0 bg-surface-container-high"></div>
-        <img src="assets/img/gate.jpeg" alt="केंद्र का प्रवेश द्वार" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        <img src="assets/img/gate.jpeg" alt="Center entrance" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/60 to-primary-deep/20"></div>
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 pb-12 md:pb-16 w-full reveal active">
-            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">गैलरी</span>
-            <h1 class="font-headline text-3xl md:text-5xl text-on-primary mt-4 max-w-2xl leading-[1.3]">केंद्र की एक झलक</h1>
-            <p class="font-body text-on-primary/80 mt-5 max-w-lg leading-relaxed">एक शांत, सुरक्षित और सम्मानजनक वातावरण — रिकवरी के लिए बनाया गया।</p>
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Gallery</span>
+            <h1 class="font-headline text-3xl md:text-5xl text-on-primary mt-4 max-w-2xl leading-[1.3]">A Glimpse of Our Center</h1>
+            <p class="font-body text-on-primary/80 mt-5 max-w-lg leading-relaxed">A calm, safe, and dignified environment — built for recovery.</p>
         </div>
     </section>
 
@@ -51,9 +51,9 @@ $items = [
 
     <!-- CTA -->
     <section class="max-w-site mx-auto px-5 md:px-10 pb-24 text-center reveal">
-        <h2 class="font-headline text-2xl md:text-3xl text-on-background mb-4">खुद आकर देखना चाहते हैं?</h2>
-        <p class="font-body text-on-background/70 mb-8 max-w-md mx-auto">केंद्र का दौरा बुक करने के लिए हमसे संपर्क करें।</p>
-        <a href="contact" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-card font-semibold hover:bg-primary-deep transition-colors">दौरा बुक करें</a>
+        <h2 class="font-headline text-2xl md:text-3xl text-on-background mb-4">Want to See It in Person?</h2>
+        <p class="font-body text-on-background/70 mb-8 max-w-md mx-auto">Contact us to book a visit to the center.</p>
+        <a href="contact" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-card font-semibold hover:bg-primary-deep transition-colors">Book a Visit</a>
     </section>
 
 </main>

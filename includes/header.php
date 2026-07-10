@@ -1,10 +1,10 @@
 <?php
 // Each page must set $page_title and $page_description before including this file.
 if (!isset($page_title)) { $page_title = SITE_NAME; }
-if (!isset($page_description)) { $page_description = 'जीवन रेखा फाउंडेशन — सम्मान, गोपनीयता और चिकित्सकीय देखभाल के साथ नशा मुक्ति की ओर एक नई शुरुआत।'; }
+if (!isset($page_description)) { $page_description = 'Jeevan Rekha Foundation — a new beginning towards a life free from addiction, with dignity, privacy, and medical care.'; }
 ?>
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
