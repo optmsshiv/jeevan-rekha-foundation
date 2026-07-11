@@ -352,11 +352,6 @@ include 'includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <p class="font-body text-xs text-on-background/40 mt-8 text-center">
-                    <!-- TODO: add real team members' names, qualifications, and photos here -->
-                    Real team information will be added soon.
-                </p>
             </div>
         </section>
 
