@@ -38,7 +38,7 @@ include 'includes/navbar.php';
         <!-- HERO — full-bleed photo with a light wash overlay (left to right) for text legibility -->
         <section class="relative min-h-[620px] md:min-h-[680px] flex items-center overflow-hidden">
             <div class="absolute inset-0 bg-surface-container-high"></div>
-            <img src="assets/img/outer.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <img src="assets/img/logo.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
             <div class="absolute inset-0 bg-gradient-to-r from-white/98 via-white/75 to-white/20"></div>
 
             <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 w-full">
