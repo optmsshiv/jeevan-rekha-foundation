@@ -82,7 +82,7 @@ include 'includes/navbar.php';
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 pt-8 mt-8 border-t border-outline-variant">
                         <div>
-                            <p class="font-headline text-2xl md:text-3xl text-primary">100+</p>
+                            <p class="font-headline text-2xl md:text-3xl text-primary">3000+</p>
                             <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Families Trust Us</p>
                         </div>
                         <div>
