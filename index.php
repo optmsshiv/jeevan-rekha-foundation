@@ -301,36 +301,58 @@ include 'includes/navbar.php';
             </div>
         </section>
 
-        <!-- TEAM (generic roles — replace with real staff before launch) -->
+        <!-- TEAM — photo-ready placeholder cards. Photo naming: doctor-1.jpeg,
+             doctor-2.jpeg, doctor-3.jpeg. Replace [Add Name] and role/bio text
+             with real staff details once confirmed — no other changes needed.
+             NOTE: badges intentionally show role only, not years-of-experience
+             or degree claims, until real credentials are confirmed. -->
         <section class="bg-surface-container-low py-24">
             <div class="max-w-site mx-auto px-5 md:px-10">
-                <div class="text-center max-w-lg mx-auto mb-14 reveal">
-                    <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Our Team</span>
-                    <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3">Experienced and Dedicated Specialists</h2>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
+                    <div class="max-w-xl">
+                        <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Expert Clinical Leadership</span>
+                        <h2 class="font-headline text-3xl md:text-4xl text-on-background mt-3 mb-4">Led by Dedicated Specialists</h2>
+                        <p class="font-body text-on-background/65 leading-relaxed">Our multidisciplinary team ensures every patient receives attentive, professional care in a supportive setting.</p>
+                    </div>
+                    <a href="about" class="inline-block border border-primary text-primary font-body text-xs font-semibold tracking-wide uppercase px-6 py-3 rounded-card hover:bg-primary hover:text-on-primary transition-colors whitespace-nowrap">Meet Our Team</a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 reveal">
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high flex items-center justify-center mb-5 border-4 border-white">
-                            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3e4945" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                    <div class="glass-card rounded-card overflow-hidden lift">
+                        <div class="aspect-[4/5] relative bg-surface-container-high">
+                            <img src="assets/img/dr.jpeg" alt="Senior Psychiatrist" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
+                            <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Psychiatry Lead</span>
                         </div>
-                        <h4 class="font-headline text-lg text-primary">Senior Psychiatrist</h4>
-                        <p class="font-body text-sm text-on-background/60 mt-1">Specialist in de-addiction medicine</p>
+                        <div class="p-6">
+                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
+                            <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Senior Psychiatrist</p>
+                            <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Specializing in de-addiction medicine and dual diagnosis care.</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high flex items-center justify-center mb-5 border-4 border-white">
-                            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3e4945" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+                    <div class="glass-card rounded-card overflow-hidden lift">
+                        <div class="aspect-[4/5] relative bg-surface-container-high">
+                            <img src="assets/img/counseller.jpeg" alt="Clinical Psychologist" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
+                            <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Counselling Lead</span>
                         </div>
-                        <h4 class="font-headline text-lg text-primary">Clinical Psychologist</h4>
-                        <p class="font-body text-sm text-on-background/60 mt-1">Specialist in counselling and family therapy</p>
+                        <div class="p-6">
+                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
+                            <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Clinical Psychologist</p>
+                            <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Focused on trauma-informed care and family therapy.</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high flex items-center justify-center mb-5 border-4 border-white">
-                            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3e4945" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+                    <div class="glass-card rounded-card overflow-hidden lift">
+                        <div class="aspect-[4/5] relative bg-surface-container-high">
+                            <img src="assets/img/admin.jpeg" alt="Wellness Coach" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
+                            <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Wellness Lead</span>
                         </div>
-                        <h4 class="font-headline text-lg text-primary">Wellness Coach</h4>
-                        <p class="font-body text-sm text-on-background/60 mt-1">Yoga and holistic health guidance</p>
+                        <div class="p-6">
+                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
+                            <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Wellness Coach</p>
+                            <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Integrating yoga and mindfulness with clinical therapies.</p>
+                        </div>
                     </div>
                 </div>
+
                 <p class="font-body text-xs text-on-background/40 mt-8 text-center">
                     <!-- TODO: add real team members' names, qualifications, and photos here -->
                     Real team information will be added soon.
