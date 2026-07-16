@@ -20,8 +20,11 @@ define('SITE_EMAIL', 'care@rekhafoundation.com');
 // Verification enabled. Generate the App Password at:
 // https://myaccount.google.com/apppasswords — paste the 16-character code
 // below with no spaces. Submissions are sent to SITE_EMAIL above.
-define('SMTP_USER', SITE_EMAIL);
-define('SMTP_APP_PASSWORD', 'PASTE_16_CHARACTER_APP_PASSWORD_HERE');
+define('SMTP_USER', 'rekhafoundation2.0@gmail.com');
+define('SMTP_APP_PASSWORD', 'njyvxujajmejlpou');
+// Where contact form submissions actually get delivered — separate from
+// SITE_EMAIL (which stays as the public-facing address shown across the site).
+define('CONTACT_FORM_TO', 'rekhafoundation2.0@gmail.com');
 
 // Meta WhatsApp Cloud API — sends a template message to the admin's WhatsApp
 // for every contact form submission. See developers.facebook.com > your app

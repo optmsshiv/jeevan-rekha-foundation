@@ -103,7 +103,7 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
         $mail->Port       = 587;
 
         $mail->setFrom(SMTP_USER, SITE_NAME);
-        $mail->addAddress(SITE_EMAIL);
+        $mail->addAddress(CONTACT_FORM_TO);
         if ($email !== '') {
             $mail->addReplyTo($email, $name);
         }
@@ -136,7 +136,7 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
 
             $reply->setFrom(SMTP_USER, SITE_NAME);
             $reply->addAddress($email, $name);
-            $reply->addReplyTo(SITE_EMAIL, SITE_NAME);
+            $reply->addReplyTo(CONTACT_FORM_TO, SITE_NAME);
 
             $logoCid = 'jrflogo';
             $logoPath = __DIR__ . '/../assets/img/logo.jpeg';
