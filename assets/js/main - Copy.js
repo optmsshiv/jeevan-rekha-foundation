@@ -97,20 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: new FormData(contactForm),
                 headers: { 'Accept': 'application/json' }
             })
-                .then(function (res) {
-                    return res.text().then(function (text) {
-                        var data;
-                        try {
-                            data = JSON.parse(text);
-                        } catch (parseErr) {
-                            // Response wasn't JSON — likely a hosting security/WAF
-                            // block page intercepting the request before it reached
-                            // the PHP script, rather than an actual form error.
-                            throw new Error('Our server didn\'t respond as expected. Please try again in a moment, or contact us directly by phone/WhatsApp.');
-                        }
-                        return { ok: res.ok, data: data };
-                    });
-                })
+                .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
                 .then(function (result) {
                     if (result.ok && result.data.success) {
                         btn.innerText = 'Thank you! We will contact you soon';
