@@ -139,7 +139,7 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
             $reply->addReplyTo(CONTACT_FORM_TO, SITE_NAME);
 
             $logoCid = 'jrflogo';
-            $logoPath = __DIR__ . '/assets/img/logo.jpeg';
+            $logoPath = __DIR__ . '/../assets/img/logo.jpeg';
             if (file_exists($logoPath)) {
                 $reply->addEmbeddedImage($logoPath, $logoCid);
             }
