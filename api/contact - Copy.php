@@ -101,12 +101,6 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
         $mail->Password   = SMTP_APP_PASSWORD;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
-        // Fail fast rather than hanging — shared hosting can throttle or be
-        // slow on outbound SMTP, and a long hang risks the whole request
-        // timing out at the server/proxy level (which can return an HTML
-        // error page instead of this script's JSON response).
-        $mail->Timeout          = 5;
-        $mail->SMTPKeepAlive    = false;
 
         $mail->setFrom(SMTP_USER, SITE_NAME);
         $mail->addAddress(CONTACT_FORM_TO);
@@ -128,10 +122,8 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
     }
 
     // 2b) Designed auto-reply confirmation to the visitor — only possible if
-    // they gave an email address (it's an optional field on the form), and
-    // only attempted if the admin email above actually connected — if SMTP
-    // is unreachable, there's no point doubling the wait to find that out twice.
-    if ($email !== '' && $mailSent) {
+    // they gave an email address (it's an optional field on the form).
+    if ($email !== '') {
         $reply = new PHPMailer(true);
         try {
             $reply->isSMTP();
@@ -141,8 +133,6 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
             $reply->Password   = SMTP_APP_PASSWORD;
             $reply->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $reply->Port       = 587;
-            $reply->Timeout       = 5;
-            $reply->SMTPKeepAlive = false;
 
             $reply->setFrom(SMTP_USER, SITE_NAME);
             $reply->addAddress($email, $name);
