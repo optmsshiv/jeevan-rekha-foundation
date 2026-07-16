@@ -100,6 +100,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Contact form — submits to api/contact.php via fetch, shows real
     // success/error feedback based on the server's JSON response.
+    //
+    // Some hosting security layers (e.g. Imunify360's "Human Check") respond
+    // to certain requests with a JS challenge instead of passing them through:
+    //   <script>document.cookie = "humans_XXXXX=1"; document.location.reload(true)</script>
+    // A normal page navigation executes this automatically and invisibly.
+    // fetch() never executes returned <script> tags, so that cookie never
+    // gets set and the request keeps getting blocked. This detects that
+    // exact pattern, sets the cookie manually, and retries the real
+    // submission once — replicating what a normal browser page load does.
+    function extractHumanCheckCookie(text) {
+        var match = /document\.cookie\s*=\s*["']([^"'=;]+)=([^"';]+)["']/.exec(text || '');
+        return match ? (match[1] + '=' + match[2]) : null;
+    }
+
     var contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -107,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var btn = contactForm.querySelector('button[type="submit"]');
             var errorEl = document.getElementById('contact-form-error');
             var original = btn.innerText;
+            var formData = new FormData(contactForm);
 
             if (errorEl) {
                 errorEl.classList.add('hidden');
@@ -115,55 +130,59 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.innerText = 'Sending...';
             btn.disabled = true;
 
-            fetch(contactForm.getAttribute('action'), {
-                method: 'POST',
-                body: new FormData(contactForm),
-                headers: { 'Accept': 'application/json' }
-            })
-                .then(function (res) {
-                    return res.text().then(function (text) {
-                        var data;
-                        try {
-                            data = JSON.parse(text);
-                        } catch (parseErr) {
-                            // Response wasn't JSON — likely a hosting security/WAF
-                            // block page intercepting the request before it reached
-                            // the PHP script, rather than an actual form error.
-                            // TEMPORARY DIAGNOSTIC: show the raw response (status +
-                            // first 300 chars) directly in the on-page error message,
-                            // so this can be read/screenshotted on mobile without
-                            // needing dev tools or a terminal. Remove once diagnosed.
-                            var snippet = (text || '(empty response)').replace(/\s+/g, ' ').trim().substring(0, 300);
-                            throw new Error('DIAGNOSTIC — HTTP ' + res.status + ': ' + snippet);
-                        }
-                        return { ok: res.ok, data: data };
-                    });
+            function attemptSubmit(isRetry) {
+                fetch(contactForm.getAttribute('action'), {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
                 })
-                .then(function (result) {
-                    if (result.ok && result.data.success) {
-                        contactForm.reset();
+                    .then(function (res) {
+                        return res.text().then(function (text) {
+                            var data;
+                            try {
+                                data = JSON.parse(text);
+                            } catch (parseErr) {
+                                var cookiePair = extractHumanCheckCookie(text);
+                                if (cookiePair && !isRetry) {
+                                    document.cookie = cookiePair + '; path=/';
+                                    attemptSubmit(true);
+                                    return null;
+                                }
+                                var snippet = (text || '(empty response)').replace(/\s+/g, ' ').trim().substring(0, 300);
+                                throw new Error('Our server didn\'t respond as expected. Please try again in a moment, or contact us directly by phone/WhatsApp. (HTTP ' + res.status + ': ' + snippet + ')');
+                            }
+                            return { ok: res.ok, data: data };
+                        });
+                    })
+                    .then(function (result) {
+                        if (result === null) return; // retry already dispatched
+                        if (result.ok && result.data.success) {
+                            contactForm.reset();
+                            btn.innerText = original;
+                            btn.disabled = false;
+
+                            var toast = document.getElementById('success-toast');
+                            if (toast) {
+                                toast.classList.add('toast-visible');
+                                setTimeout(function () {
+                                    toast.classList.remove('toast-visible');
+                                }, 3500);
+                            }
+                        } else {
+                            throw new Error(result.data.message || 'Something went wrong. Please try again.');
+                        }
+                    })
+                    .catch(function (err) {
+                        if (errorEl) {
+                            errorEl.innerText = err.message || 'Something went wrong. Please try again, or contact us directly by phone/WhatsApp.';
+                            errorEl.classList.remove('hidden');
+                        }
                         btn.innerText = original;
                         btn.disabled = false;
+                    });
+            }
 
-                        var toast = document.getElementById('success-toast');
-                        if (toast) {
-                            toast.classList.add('toast-visible');
-                            setTimeout(function () {
-                                toast.classList.remove('toast-visible');
-                            }, 3500);
-                        }
-                    } else {
-                        throw new Error(result.data.message || 'Something went wrong. Please try again.');
-                    }
-                })
-                .catch(function (err) {
-                    if (errorEl) {
-                        errorEl.innerText = err.message || 'Something went wrong. Please try again, or contact us directly by phone/WhatsApp.';
-                        errorEl.classList.remove('hidden');
-                    }
-                    btn.innerText = original;
-                    btn.disabled = false;
-                });
+            attemptSubmit(false);
         });
     }
 });
