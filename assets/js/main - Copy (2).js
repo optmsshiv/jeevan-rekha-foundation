@@ -28,17 +28,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Success toast — click the backdrop to dismiss early (contact page only,
-    // element only exists there).
-    var successToast = document.getElementById('success-toast');
-    if (successToast) {
-        successToast.addEventListener('click', function (e) {
-            if (e.target === successToast) {
-                successToast.classList.remove('toast-visible');
-            }
-        });
-    }
-
     // Floating WhatsApp button — appears on every page.
     // Number comes from data-whatsapp on <body>, set in includes/header.php
     // from the SITE_WHATSAPP constant in includes/config.php.
@@ -124,17 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(function (result) {
                     if (result.ok && result.data.success) {
+                        btn.innerText = 'Thank you! We will contact you soon';
                         contactForm.reset();
-                        btn.innerText = original;
-                        btn.disabled = false;
-
-                        var toast = document.getElementById('success-toast');
-                        if (toast) {
-                            toast.classList.add('toast-visible');
-                            setTimeout(function () {
-                                toast.classList.remove('toast-visible');
-                            }, 3500);
-                        }
+                        setTimeout(function () {
+                            btn.innerText = original;
+                            btn.disabled = false;
+                        }, 4000);
                     } else {
                         throw new Error(result.data.message || 'Something went wrong. Please try again.');
                     }

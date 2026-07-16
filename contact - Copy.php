@@ -184,17 +184,6 @@ include 'includes/navbar.php';
 
     </section>
 
-    <!-- Centered success toast — shown by main.js on successful form submission -->
-    <div id="success-toast" class="fixed inset-0 z-[200] flex items-center justify-center bg-on-background/40 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="toast-card bg-background rounded-card shadow-2xl p-8 md:p-10 max-w-sm mx-5 text-center scale-95 transition-transform duration-300">
-            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
-                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#006953" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-            </div>
-            <h3 class="font-headline text-xl text-on-background mb-2">Thank You!</h3>
-            <p class="font-body text-sm text-on-background/65 leading-relaxed">We've received your message and will contact you shortly.</p>
-        </div>
-    </div>
-
 </main>
 
 <?php include 'includes/footer.php'; ?>

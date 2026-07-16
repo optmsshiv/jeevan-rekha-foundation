@@ -103,15 +103,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     .loader-ring { animation: none; }
 }
 
-/* Centered success toast (contact form) */
-#success-toast.toast-visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-#success-toast.toast-visible .toast-card {
-    transform: scale(1);
-}
-
 /* Floating WhatsApp button — injected by main.js on every page */
 .wa-float {
     position: fixed;
