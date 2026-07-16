@@ -75,7 +75,7 @@ include 'includes/navbar.php';
 
             <!-- Madhepura — main center -->
             <div class="glass-card rounded-card p-8 reveal">
-                <span class="inline-block bg-primary/10 text-primary font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Main Center</span>
+                <span class="inline-block bg-primary/10 text-primary font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Branch</span>
                 <h3 class="font-headline text-xl text-on-background mb-4">Madhepura</h3>
                 <div class="flex flex-col gap-3 mb-6">
                     <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
@@ -101,7 +101,7 @@ include 'includes/navbar.php';
 
             <!-- Purnia branch -->
             <div class="glass-card rounded-card p-8 reveal">
-                <span class="inline-block bg-highlight-gold/15 text-highlight-gold font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Branch</span>
+                <span class="inline-block bg-highlight-gold/15 text-highlight-gold font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Main Center</span>
                 <h3 class="font-headline text-xl text-on-background mb-4"><?php echo BRANCH2_NAME; ?></h3>
                 <div class="flex flex-col gap-3 mb-6">
                     <a href="tel:<?php echo BRANCH2_PHONE1_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
@@ -178,7 +178,7 @@ include 'includes/navbar.php';
             <button type="submit" class="bg-primary text-on-primary px-8 py-3.5 rounded-card font-semibold hover:bg-primary-deep transition-colors">
                 Send Message
             </button>
-            <p id="contact-form-error" class="font-body text-xs text-red-600 text-left break-words hidden"></p>
+            <p id="contact-form-error" class="font-body text-xs text-red-600 text-center hidden"></p>
             <p class="font-body text-xs text-on-background/50 text-center">Your information will be kept completely confidential.</p>
         </form>
 

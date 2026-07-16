@@ -129,12 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             // Response wasn't JSON — likely a hosting security/WAF
                             // block page intercepting the request before it reached
                             // the PHP script, rather than an actual form error.
-                            // TEMPORARY DIAGNOSTIC: show the raw response (status +
-                            // first 300 chars) directly in the on-page error message,
-                            // so this can be read/screenshotted on mobile without
-                            // needing dev tools or a terminal. Remove once diagnosed.
-                            var snippet = (text || '(empty response)').replace(/\s+/g, ' ').trim().substring(0, 300);
-                            throw new Error('DIAGNOSTIC — HTTP ' + res.status + ': ' + snippet);
+                            throw new Error('Our server didn\'t respond as expected. Please try again in a moment, or contact us directly by phone/WhatsApp.');
                         }
                         return { ok: res.ok, data: data };
                     });
