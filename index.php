@@ -176,7 +176,7 @@ include 'includes/navbar.php';
             <div class="max-w-site mx-auto px-5 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div class="relative reveal">
                     <div class="aspect-[4/5] rounded-card bg-surface-container-high flex items-center justify-center relative overflow-hidden border-4 border-white">
-                        <img src="assets/img/admin.jpeg" alt="Counselling session" class="w-full h-full object-cover">
+                        <img src="assets/img/doctor-3.jpeg" alt="Counselling session" class="w-full h-full object-cover">
                         <span class="absolute bottom-4 right-4 font-body text-[11px] text-on-background/40">Counselling Session</span>
                     </div>
                 </div>
@@ -320,7 +320,7 @@ include 'includes/navbar.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
                     <div class="glass-card rounded-card overflow-hidden lift">
                         <div class="aspect-[4/5] relative bg-surface-container-high">
-                            <img src="assets/img/doctor-1.jpeg" alt="Senior Psychiatrist" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
+                            <img src="assets/img/doctor-1.jpeg" alt="Senior Psychiatrist" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Psychiatry Lead</span>
                         </div>
                         <div class="p-6">
@@ -331,7 +331,7 @@ include 'includes/navbar.php';
                     </div>
                     <div class="glass-card rounded-card overflow-hidden lift">
                         <div class="aspect-[4/5] relative bg-surface-container-high">
-                            <img src="assets/img/doctor-2.jpeg" alt="Clinical Psychologist" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
+                            <img src="assets/img/doctor-2.jpeg" alt="Clinical Psychologist" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Counselling Lead</span>
                         </div>
                         <div class="p-6">
@@ -342,7 +342,7 @@ include 'includes/navbar.php';
                     </div>
                     <div class="glass-card rounded-card overflow-hidden lift">
                         <div class="aspect-[4/5] relative bg-surface-container-high">
-                            <img src="assets/img/doctor-3.jpeg" alt="Wellness Coach" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
+                            <img src="assets/img/doctor-3.jpeg" alt="Wellness Coach" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Wellness Lead</span>
                         </div>
                         <div class="p-6">
