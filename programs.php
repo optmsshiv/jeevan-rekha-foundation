@@ -35,7 +35,7 @@ $stages = [
     [
         'title' => 'Aftercare',
         'desc'  => 'Regular follow-up and support groups, so recovery stays stable in the long run.',
-        'image' => null,
+        'image' => 'outer.jpeg',
     ],
 ];
 ?>

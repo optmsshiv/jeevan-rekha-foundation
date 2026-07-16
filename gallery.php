@@ -11,14 +11,14 @@ include 'includes/navbar.php';
 $items = [
     ['file' => 'gate.jpeg',         'caption' => 'Center Entrance'],
     ['file' => 'admin.jpeg',        'caption' => 'Counselling Room'],
-    ['file' => 'yoga-1.jpeg',       'caption' => 'Yoga & Meditation'],
+    ['file' => 'yoga1.jpeg',       'caption' => 'Yoga & Meditation'],
     ['file' => 'room1.jpeg',        'caption' => 'Patient Room'],
     ['file' => 'room2.jpeg',        'caption' => 'Community Hall'],
-    ['file' => 'indoor-games.jpeg', 'caption' => 'Indoor Games & Recreation'],
+    ['file' => 'carrom.jpeg', 'caption' => 'Indoor Games & Recreation'],
     ['file' => 'outer.jpeg',        'caption' => 'Garden & Open Space'],
-    ['file' => 'yoga-2.jpeg',       'caption' => 'Yoga & Meditation'],
-    ['file' => 'yoga-3.jpeg',       'caption' => 'Yoga & Meditation'],
-    ['file' => 'yoga-4.jpeg',       'caption' => 'Yoga & Meditation'],
+    ['file' => 'yoga2.jpeg',       'caption' => 'Yoga & Meditation'],
+    ['file' => 'yoga.jpeg',       'caption' => 'Yoga & Meditation'],
+    ['file' => 'med1.jpeg',       'caption' => 'Yoga & Meditation'],
 ];
 // TODO: rename your yoga photos to yoga-1.jpeg, yoga-2.jpeg, yoga-3.jpeg,
 // yoga-4.jpeg (add more rows above if you have additional ones) and upload

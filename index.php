@@ -324,7 +324,7 @@ include 'includes/navbar.php';
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Psychiatry Lead</span>
                         </div>
                         <div class="p-6">
-                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
+                            <h4 class="font-headline text-lg text-on-background">Dr Nayab Anjum</h4>
                             <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Senior Psychiatrist</p>
                             <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Specializing in de-addiction medicine and dual diagnosis care.</p>
                         </div>
@@ -335,7 +335,7 @@ include 'includes/navbar.php';
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Counselling Lead</span>
                         </div>
                         <div class="p-6">
-                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
+                            <h4 class="font-headline text-lg text-on-background">Ranadip Deb</h4>
                             <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Clinical Psychologist</p>
                             <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Focused on trauma-informed care and family therapy.</p>
                         </div>
@@ -346,7 +346,7 @@ include 'includes/navbar.php';
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Wellness Lead</span>
                         </div>
                         <div class="p-6">
-                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
+                            <h4 class="font-headline text-lg text-on-background">Karan kumar</h4>
                             <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Wellness Coach</p>
                             <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Integrating yoga and mindfulness with clinical therapies.</p>
                         </div>

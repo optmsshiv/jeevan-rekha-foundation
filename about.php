@@ -208,7 +208,7 @@ include 'includes/navbar.php';
                 <img src="assets/img/gate.jpeg" alt="Entrance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
-                <img src="assets/img/yoga-1.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
+                <img src="assets/img/yoga.jpeg" alt="Yoga and meditation area" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
             </div>
             <div class="aspect-[4/3] rounded-card overflow-hidden relative group">
                 <img src="assets/img/room1.jpeg" alt="Patient room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'">
@@ -248,7 +248,7 @@ include 'includes/navbar.php';
                         </span>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-card px-6 py-4 inline-block">
-                        <h4 class="font-headline text-xl text-on-primary">[Add Name]</h4>
+                        
                         <p class="font-body text-sm text-highlight-gold mt-1 font-semibold">Co-Founder &amp; Director</p>
                         <a href="tel:<?php echo COFOUNDER_PHONE_TEL; ?>" class="font-body text-xs text-on-primary/80 mt-2 flex items-center justify-center gap-1.5 hover:text-on-primary transition-colors">
                             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
@@ -270,7 +270,8 @@ include 'includes/navbar.php';
                             <img src="assets/img/volunteer-<?php echo $i; ?>.jpeg" alt="Volunteer <?php echo $i; ?>" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                         </div>
                     </div>
-                    <h4 class="font-headline text-sm text-on-primary">[Add Name]</h4>
+                    <!-- Replace [Add Name] with the actual volunteer's name once confirmed 
+                    <h4 class="font-headline text-sm text-on-primary">[Add Name]</h4> -->
                     <span class="inline-block bg-white/15 text-highlight-gold font-body text-[10px] font-semibold px-2.5 py-1 rounded-full mt-1 tracking-wide uppercase">Volunteer</span>
                 </div>
                 <?php endfor; ?>

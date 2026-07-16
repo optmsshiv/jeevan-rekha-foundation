@@ -12,7 +12,7 @@ $pillars = [
         'hindi' => 'प्रारंभिक हस्तक्षेप',
         'desc'  => 'The earlier addiction is addressed, the easier recovery becomes. We work with families to recognize warning signs and act quickly, before dependency deepens and complications set in.',
         'icon'  => '<path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/>',
-        'image' => null,
+        'image' => 'outer.jpeg',
     ],
     [
         'title' => 'Medical Treatment',
@@ -40,7 +40,7 @@ $pillars = [
         'hindi' => 'मूल कारण का उपचार',
         'desc'  => 'Addiction is often a symptom of something deeper — trauma, stress, or an underlying mental health condition. We look past the symptom to treat what\'s actually driving it.',
         'icon'  => '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>',
-        'image' => null,
+        'image' => 'med1.jpeg',
     ],
     [
         'title' => 'Community Awareness',
