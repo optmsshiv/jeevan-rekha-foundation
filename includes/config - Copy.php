@@ -30,11 +30,6 @@ define('CONTACT_FORM_TO', 'rekhafoundation2.0@gmail.com');
 // for every contact form submission. See developers.facebook.com > your app
 // > WhatsApp > API Setup for the Phone Number ID and access token, and
 // WhatsApp Manager > Message Templates for the approved template name.
-//
-// TEMPORARILY DISABLED — set to true once credentials are filled in below
-// AND the hosting security block on api/contact.php is resolved. Only
-// email sending is active while this is false.
-define('WHATSAPP_NOTIFICATIONS_ENABLED', false);
 define('META_WA_PHONE_NUMBER_ID', 'PASTE_PHONE_NUMBER_ID_HERE');
 define('META_WA_ACCESS_TOKEN', 'PASTE_PERMANENT_ACCESS_TOKEN_HERE');
 define('META_WA_TEMPLATE_NAME', 'new_enquiry_alert');

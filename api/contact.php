@@ -285,7 +285,7 @@ $placeholders = [
     META_WA_ACCESS_TOKEN === 'PASTE_PERMANENT_ACCESS_TOKEN_HERE',
     META_WA_ADMIN_NUMBER === 'PASTE_ADMIN_WHATSAPP_NUMBER_HERE',
 ];
-if (!in_array(true, $placeholders, true)) {
+if (WHATSAPP_NOTIFICATIONS_ENABLED && !in_array(true, $placeholders, true)) {
     // 3a) Notify the admin — template params must match {{1}}, {{2}}, {{3}}
     // in the approved META_WA_TEMPLATE_NAME template.
     $waMessageParam = mb_substr(trim($message), 0, 300); // WhatsApp template params have a length limit
