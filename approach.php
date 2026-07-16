@@ -26,14 +26,14 @@ $pillars = [
         'hindi' => 'मनोवैज्ञानिक उपचार',
         'desc'  => 'Individual and group therapy to address the mental and emotional roots of addiction, helping patients understand their triggers and build lasting coping skills.',
         'icon'  => '<path d="M19 14c1.5 0 3-1.5 3-3.5S20.5 7 19 7c-.4-2-2-3.5-4-3.5-1.2 0-2.3.6-3 1.5-.7-.9-1.8-1.5-3-1.5-2 0-3.6 1.5-4 3.5C3.5 7 2 8.5 2 10.5S3.5 14 5 14"/><path d="M8 14v3a4 4 0 0 0 8 0v-3"/>',
-        'image' => 'admin.jpeg',
+        'image' => 'doctor-3.jpeg',
     ],
     [
         'title' => 'Family Counselling',
         'hindi' => 'पारिवारिक परामर्श',
         'desc'  => 'Recovery is stronger with family involved. We hold regular sessions to heal relationships, educate families about addiction, and prepare a supportive home environment.',
         'icon'  => '<path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
-        'image' => 'room2.jpeg',
+        'image' => 'office.jpeg',
     ],
     [
         'title' => 'Treating the Root Cause',
