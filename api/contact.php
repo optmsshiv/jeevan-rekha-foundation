@@ -94,6 +94,7 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
     // 2a) Notification to the clinic
     $mail = new PHPMailer(true);
     try {
+        $mail->CharSet    = PHPMailer::CHARSET_UTF8;
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
@@ -134,6 +135,7 @@ if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
     if ($email !== '' && $mailSent) {
         $reply = new PHPMailer(true);
         try {
+            $reply->CharSet    = PHPMailer::CHARSET_UTF8;
             $reply->isSMTP();
             $reply->Host       = 'smtp.gmail.com';
             $reply->SMTPAuth   = true;
