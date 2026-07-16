@@ -4,7 +4,11 @@ RewriteEngine On
 # 1) If someone types the .php extension directly in the URL,
 #    redirect them (301) to the clean URL without it.
 #    e.g. yoursite.com/about.php -> yoursite.com/about
+#    Excludes POST requests — redirecting a POST (e.g. the contact
+#    form's fetch() to api/contact.php) breaks or drops the submitted
+#    data, since browsers convert a redirected POST to a GET.
 # ----------------------------------------------------------------
+RewriteCond %{REQUEST_METHOD} !POST
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
@@ -28,7 +32,10 @@ DirectoryIndex index.php
 # once it shows Active in cPanel > SSL/TLS Status, keep this ON.
 # If the site breaks right after going live, comment these 2 lines
 # out temporarily until the cert finishes provisioning.
+# Excludes POST for the same reason as rule 1 above — a redirected
+# POST loses its data.
 # ----------------------------------------------------------------
+RewriteCond %{REQUEST_METHOD} !POST
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
@@ -36,11 +43,14 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Force non-www (pick ONE of the two blocks below — non-www is on
 # by default; comment it and uncomment the www block if you'd
 # rather www.yoursite.com be canonical)
+# Excludes POST for the same reason as rule 1 above.
 # ----------------------------------------------------------------
+RewriteCond %{REQUEST_METHOD} !POST
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
 # Force www:
+# RewriteCond %{REQUEST_METHOD} !POST
 # RewriteCond %{HTTP_HOST} !^www\. [NC]
 # RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
