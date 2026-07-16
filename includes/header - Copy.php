@@ -22,7 +22,6 @@ if (!isset($og_image)) { $og_image = rtrim(SITE_URL, '/') . '/assets/img/outer.j
 <title><?php echo $page_title; ?> | <?php echo SITE_NAME; ?></title>
 <meta name="description" content="<?php echo $page_description; ?>">
 <meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="xuJRo5KXzZEgu28ngnD3-C3UnpnbNeUrRzGioCv-pUE" />
 <link rel="canonical" href="<?php echo $canonical_url; ?>">
 
 <!-- Open Graph / Facebook -->
