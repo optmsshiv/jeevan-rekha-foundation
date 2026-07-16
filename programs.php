@@ -10,12 +10,12 @@ $stages = [
     [
         'title' => 'First Conversation & Assessment',
         'desc'  => 'In a confidential conversation, we understand the person\'s situation and decide on the right program. Family can be part of this step too.',
-        'image' => null,
+        'image' => 'office.jpeg',
     ],
     [
         'title' => 'Admission',
         'desc'  => 'The necessary paperwork and welcome process — kept simple and stress-free, so the person feels at ease.',
-        'image' => null,
+        'image' => 'doctor-3.jpeg',
     ],
     [
         'title' => 'Medical Detox',

@@ -10,11 +10,11 @@ include 'includes/navbar.php';
 // hides the <img> and the caption still shows over the placeholder background.
 $items = [
     ['file' => 'gate.jpeg',         'caption' => 'Center Entrance'],
-    ['file' => 'admin.jpeg',        'caption' => 'Counselling Room'],
+    ['file' => 'office.jpeg',        'caption' => 'Counselling Room'],
     ['file' => 'yoga1.jpeg',       'caption' => 'Yoga & Meditation'],
     ['file' => 'room1.jpeg',        'caption' => 'Patient Room'],
     ['file' => 'room2.jpeg',        'caption' => 'Community Hall'],
-    ['file' => 'carrom.jpeg', 'caption' => 'Indoor Games & Recreation'],
+    ['file' => 'carrom.jpg', 'caption' => 'Indoor Games & Recreation'],
     ['file' => 'outer.jpeg',        'caption' => 'Garden & Open Space'],
     ['file' => 'yoga2.jpeg',       'caption' => 'Yoga & Meditation'],
     ['file' => 'yoga.jpeg',       'caption' => 'Yoga & Meditation'],
