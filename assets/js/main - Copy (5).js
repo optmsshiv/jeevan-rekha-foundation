@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             var btn = contactForm.querySelector('button[type="submit"]');
             var errorEl = document.getElementById('contact-form-error');
-            var original = btn.innerHTML;
+            var original = btn.innerText;
             var formData = new FormData(contactForm);
 
             if (errorEl) {
                 errorEl.classList.add('hidden');
                 errorEl.innerText = '';
             }
-            btn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span>Sending...';
+            btn.innerText = 'Sending...';
             btn.disabled = true;
 
             function attemptSubmit(isRetry) {
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (result === null) return; // retry already dispatched
                         if (result.ok && result.data.success) {
                             contactForm.reset();
-                            btn.innerHTML = original;
+                            btn.innerText = original;
                             btn.disabled = false;
 
                             var toast = document.getElementById('success-toast');
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             errorEl.innerText = err.message || 'Something went wrong. Please try again, or contact us directly by phone/WhatsApp.';
                             errorEl.classList.remove('hidden');
                         }
-                        btn.innerHTML = original;
+                        btn.innerText = original;
                         btn.disabled = false;
                     });
             }

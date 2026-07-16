@@ -103,22 +103,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     .loader-ring { animation: none; }
 }
 
-/* Small inline spinner for buttons (e.g. contact form submit) */
-.btn-spinner {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-top-color: #ffffff;
-    border-radius: 9999px;
-    animation: loader-spin 0.7s linear infinite;
-    vertical-align: -2px;
-    margin-right: 8px;
-}
-@media (prefers-reduced-motion: reduce) {
-    .btn-spinner { animation: none; }
-}
-
 /* Centered success toast (contact form) */
 #success-toast.toast-visible {
     opacity: 1;
