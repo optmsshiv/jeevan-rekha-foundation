@@ -9,49 +9,49 @@ include 'includes/navbar.php';
 $pillars = [
     [
         'title' => 'Early Intervention',
-        'hindi' => 'सही समय पर कदम उठाना ही समझदारी का काम है',
+        'hindi' => 'प्रारंभिक हस्तक्षेप',
         'desc'  => 'The earlier addiction is addressed, the easier recovery becomes. We work with families to recognize warning signs and act quickly, before dependency deepens and complications set in.',
         'icon'  => '<path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/>',
-        'image' => 'office.jpeg',
+        'image' => null,
     ],
     [
         'title' => 'Medical Treatment',
-        'hindi' => 'चिकित्सकीय उपचार',
+        'hindi' => 'चिकित्सा उपचार',
         'desc'  => 'Safe, physician-supervised detoxification that manages withdrawal symptoms and physical dependency, with continuous health monitoring throughout the treatment period.',
         'icon'  => '<path d="M9 12l2 2 4-4M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/>',
-        'image' => 'outer.jpeg',
+        'image' => 'room1.jpeg',
     ],
     [
         'title' => 'Psychological Treatment',
-        'hindi' => 'मनोवैज्ञानिक द्वारा परामर्श',
+        'hindi' => 'मनोवैज्ञानिक उपचार',
         'desc'  => 'Individual and group therapy to address the mental and emotional roots of addiction, helping patients understand their triggers and build lasting coping skills.',
         'icon'  => '<path d="M19 14c1.5 0 3-1.5 3-3.5S20.5 7 19 7c-.4-2-2-3.5-4-3.5-1.2 0-2.3.6-3 1.5-.7-.9-1.8-1.5-3-1.5-2 0-3.6 1.5-4 3.5C3.5 7 2 8.5 2 10.5S3.5 14 5 14"/><path d="M8 14v3a4 4 0 0 0 8 0v-3"/>',
-        'image' => 'med1.jpeg',
+        'image' => 'admin.jpeg',
     ],
     [
         'title' => 'Family Counselling',
-        'hindi' => 'परिवार की भागीदारी',
+        'hindi' => 'पारिवारिक परामर्श',
         'desc'  => 'Recovery is stronger with family involved. We hold regular sessions to heal relationships, educate families about addiction, and prepare a supportive home environment.',
         'icon'  => '<path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
         'image' => 'room2.jpeg',
     ],
     [
         'title' => 'Treating the Root Cause',
-        'hindi' => 'नशे के मूल कारण का उपचार',
+        'hindi' => 'मूल कारण का उपचार',
         'desc'  => 'Addiction is often a symptom of something deeper — trauma, stress, or an underlying mental health condition. We look past the symptom to treat what\'s actually driving it.',
         'icon'  => '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>',
-        'image' => 'yoga.jpeg',
+        'image' => null,
     ],
     [
         'title' => 'Community Awareness',
-        'hindi' => 'सामुदायिक/जन जागरूकता अभियान',
+        'hindi' => 'सामुदायिक जागरूकता',
         'desc'  => 'We run outreach and awareness programs across the region, helping communities understand addiction as a medical condition rather than a moral failing.',
         'icon'  => '<circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><path d="M17 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.87"/>',
-        'image' => 'gate.jpeg',
+        'image' => 'outer.jpeg',
     ],
     [
         'title' => 'Reducing Stigma',
-        'hindi' => 'सामाजिक कलंक को कम करना',
+        'hindi' => 'कलंक को कम करना',
         'desc'  => 'Shame keeps people from seeking help. Through open conversation and education, we work to change how addiction and recovery are seen, so more people come forward sooner.',
         'icon'  => '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/>',
         'image' => null,
@@ -64,7 +64,7 @@ $pillars = [
     <!-- HERO -->
     <section class="relative min-h-[380px] md:min-h-[440px] flex items-end overflow-hidden">
         <div class="absolute inset-0 bg-surface-container-high"></div>
-        <img src="assets/img/med1.jpeg" alt="Counselling session" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        <img src="assets/img/admin.jpeg" alt="Counselling session" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/60 to-primary-deep/20"></div>
         <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 pb-12 md:pb-16 w-full reveal active">
             <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Our Approach</span>

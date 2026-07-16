@@ -82,7 +82,7 @@ include 'includes/navbar.php';
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 pt-8 mt-8 border-t border-outline-variant">
                         <div>
-                            <p class="font-headline text-2xl md:text-3xl text-primary">3000+</p>
+                            <p class="font-headline text-2xl md:text-3xl text-primary">100+</p>
                             <p class="font-body text-[10px] md:text-xs text-on-background/60 uppercase tracking-widest mt-1">Families Trust Us</p>
                         </div>
                         <div>
@@ -320,38 +320,43 @@ include 'includes/navbar.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
                     <div class="glass-card rounded-card overflow-hidden lift">
                         <div class="aspect-[4/5] relative bg-surface-container-high">
-                            <img src="assets/img/dr.jpeg" alt="Senior Psychiatrist" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                            <img src="assets/img/doctor-1.jpeg" alt="Senior Psychiatrist" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Psychiatry Lead</span>
                         </div>
                         <div class="p-6">
-                            <h4 class="font-headline text-lg text-on-background">Dr Nayab Anjum</h4>
+                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
                             <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Senior Psychiatrist</p>
                             <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Specializing in de-addiction medicine and dual diagnosis care.</p>
                         </div>
                     </div>
                     <div class="glass-card rounded-card overflow-hidden lift">
                         <div class="aspect-[4/5] relative bg-surface-container-high">
-                            <img src="assets/img/counseller.jpeg" alt="Clinical Psychologist" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                            <img src="assets/img/doctor-2.jpeg" alt="Clinical Psychologist" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Counselling Lead</span>
                         </div>
                         <div class="p-6">
-                            <h4 class="font-headline text-lg text-on-background">Ranadip Deb</h4>
+                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
                             <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Clinical Psychologist</p>
                             <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Focused on trauma-informed care and family therapy.</p>
                         </div>
                     </div>
                     <div class="glass-card rounded-card overflow-hidden lift">
                         <div class="aspect-[4/5] relative bg-surface-container-high">
-                            <img src="assets/img/admin.jpeg" alt="Wellness Coach" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                            <img src="assets/img/doctor-3.jpeg" alt="Wellness Coach" class="absolute inset-0 w-full h-full object-cover grayscale" onerror="this.style.display='none'">
                             <span class="absolute bottom-4 left-4 bg-primary-deep text-on-primary font-body text-[10px] font-semibold tracking-wide uppercase px-3 py-1.5 rounded">Wellness Lead</span>
                         </div>
                         <div class="p-6">
-                            <h4 class="font-headline text-lg text-on-background">Karan kumar</h4>
+                            <h4 class="font-headline text-lg text-on-background">[Add Name]</h4>
                             <p class="font-body text-xs text-highlight-gold font-semibold tracking-wide uppercase mt-1">Wellness Coach</p>
                             <p class="font-body text-sm text-on-background/60 mt-3 leading-relaxed">Integrating yoga and mindfulness with clinical therapies.</p>
                         </div>
                     </div>
                 </div>
+
+                <p class="font-body text-xs text-on-background/40 mt-8 text-center">
+                    <!-- TODO: add real team members' names, qualifications, and photos here -->
+                    Real team information will be added soon.
+                </p>
             </div>
         </section>
 

@@ -1,304 +1,189 @@
 <?php
-/**
- * Contact form handler for Jeevan Rekha Foundation.
- *
- * Flow: validate -> log to data/inquiries.csv (backup, always works) ->
- * send via Gmail SMTP using PHPMailer -> JSON response.
- *
- * SETUP REQUIRED before this works: open includes/config.php and paste a
- * real Gmail "App Password" into the SMTP_APP_PASSWORD constant. Generate
- * one at https://myaccount.google.com/apppasswords (needs 2-Step
- * Verification enabled on the SMTP_USER account first). Until that's set,
- * submissions still get logged to data/inquiries.csv, so nothing is lost —
- * they just won't be emailed yet.
- */
+require_once 'includes/config.php';
+$page_title = 'Contact Us — Free Confidential Consultation';
+$page_description = 'Reach Jeevan Rekha Foundation by phone, WhatsApp, or email for a free, confidential consultation. Located in Madhepura, Bihar with 24x7 support.';
+$current_page = 'contact';
+include 'includes/header.php';
+include 'includes/navbar.php';
+?>
 
-require_once '../includes/config.php';
-require_once '../vendor/phpmailer/Exception.php';
-require_once '../vendor/phpmailer/PHPMailer.php';
-require_once '../vendor/phpmailer/SMTP.php';
+<main>
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception as PHPMailerException;
+    <!-- HERO -->
+    <section class="relative min-h-[380px] md:min-h-[440px] flex items-end overflow-hidden">
+        <div class="absolute inset-0 bg-surface-container-high"></div>
+        <img src="assets/img/outer.jpeg" alt="Jeevan Rekha Foundation campus" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/60 to-primary-deep/20"></div>
+        <div class="relative z-10 max-w-site mx-auto px-5 md:px-10 pb-12 md:pb-16 w-full reveal active">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Contact Us</span>
+            <h1 class="font-headline text-3xl md:text-5xl text-on-primary mt-4 max-w-2xl leading-[1.3]">Talking Is the First Step</h1>
+            <p class="font-body text-on-primary/80 mt-5 max-w-lg leading-relaxed">Have a free, completely confidential conversation with our team. You are not alone.</p>
+        </div>
+    </section>
 
-header('Content-Type: application/json; charset=utf-8');
+    <!-- TRUST ROW -->
+    <section class="max-w-site mx-auto px-5 md:px-10 py-14 grid grid-cols-1 sm:grid-cols-3 gap-6 reveal">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#006953" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            </div>
+            <div>
+                <p class="font-headline text-base text-on-background">100% Confidential</p>
+                <p class="font-body text-xs text-on-background/60">No information is ever shared</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#006953" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+            </div>
+            <div>
+                <p class="font-headline text-base text-on-background">Free Consultation</p>
+                <p class="font-body text-xs text-on-background/60">No charge for the first conversation</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#006953" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+            </div>
+            <div>
+                <p class="font-headline text-base text-on-background">Fast Response</p>
+                <p class="font-body text-xs text-on-background/60">24×7 emergency support</p>
+            </div>
+        </div>
+    </section>
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Invalid request.']);
-    exit;
-}
+    <!-- EMERGENCY STRIP -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-16 reveal">
+        <div class="bg-primary-deep text-on-primary rounded-card p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <span class="w-3 h-3 rounded-full bg-highlight-gold shrink-0"></span>
+                <p class="font-body text-sm md:text-base">Need urgent help? We're available 24×7.</p>
+            </div>
+            <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="bg-highlight-gold text-on-primary px-6 py-3 rounded-card font-semibold whitespace-nowrap hover:bg-highlight-gold/80 transition-colors">
+                <?php echo SITE_PHONE_DISPLAY; ?>
+            </a>
+        </div>
+    </section>
 
-// Honeypot — a hidden field real users never fill in. If it has a value,
-// this is almost certainly a bot; pretend success so it doesn't retry.
-if (!empty($_POST['website'])) {
-    echo json_encode(['success' => true]);
-    exit;
-}
+    <!-- OUR LOCATIONS -->
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-16">
+        <div class="mb-10 reveal">
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-highlight-gold font-semibold">Visit Us</span>
+            <h2 class="font-headline text-2xl md:text-3xl text-on-background mt-3">Our Locations</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-function clean_line($value) {
-    return trim(str_replace(["\r", "\n"], ' ', $value));
-}
+            <!-- Madhepura — main center -->
+            <div class="glass-card rounded-card p-8 reveal">
+                <span class="inline-block bg-primary/10 text-primary font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Main Center</span>
+                <h3 class="font-headline text-xl text-on-background mb-4">Madhepura</h3>
+                <div class="flex flex-col gap-3 mb-6">
+                    <a href="tel:<?php echo SITE_PHONE_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        <?php echo SITE_PHONE_DISPLAY; ?>
+                    </a>
+                    <span class="font-body text-sm text-on-background/80 flex items-start gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <?php echo SITE_ADDRESS; ?>
+                    </span>
+                </div>
+                <div class="aspect-[4/3] rounded-card overflow-hidden">
+                    <iframe
+                        src="https://maps.google.com/maps?q=<?php echo urlencode(SITE_ADDRESS); ?>&z=15&output=embed"
+                        class="w-full h-full border-0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="<?php echo SITE_NAME; ?> — Madhepura map location">
+                    </iframe>
+                </div>
+                <a href="<?php echo SITE_MAPS_URL; ?>" target="_blank" rel="noopener" class="font-body text-sm text-primary hover:underline mt-3 inline-block">View on Google Maps →</a>
+            </div>
 
-$name    = clean_line($_POST['name'] ?? '');
-$phone   = clean_line($_POST['phone'] ?? '');
-$email   = clean_line($_POST['email'] ?? '');
-$message = trim($_POST['message'] ?? '');
+            <!-- Purnia branch -->
+            <div class="glass-card rounded-card p-8 reveal">
+                <span class="inline-block bg-highlight-gold/15 text-highlight-gold font-body text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Branch</span>
+                <h3 class="font-headline text-xl text-on-background mb-4"><?php echo BRANCH2_NAME; ?></h3>
+                <div class="flex flex-col gap-3 mb-6">
+                    <a href="tel:<?php echo BRANCH2_PHONE1_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        <?php echo BRANCH2_PHONE1_DISPLAY; ?>
+                    </a>
+                    <a href="tel:<?php echo BRANCH2_PHONE2_TEL; ?>" class="font-body text-sm text-on-background/80 hover:text-primary transition-colors flex items-center gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                        <?php echo BRANCH2_PHONE2_DISPLAY; ?>
+                    </a>
+                    <span class="font-body text-sm text-on-background/80 flex items-start gap-2">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#006953" stroke-width="2" class="shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <?php echo BRANCH2_ADDRESS; ?>
+                    </span>
+                </div>
+                <div class="aspect-[4/3] rounded-card overflow-hidden">
+                    <iframe
+                        src="https://maps.google.com/maps?q=<?php echo urlencode(BRANCH2_ADDRESS); ?>&z=15&output=embed"
+                        class="w-full h-full border-0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="<?php echo SITE_NAME; ?> — Purnia branch map location">
+                    </iframe>
+                </div>
+                <a href="<?php echo BRANCH2_MAPS_URL; ?>" target="_blank" rel="noopener" class="font-body text-sm text-primary hover:underline mt-3 inline-block">View on Google Maps →</a>
+            </div>
 
-$errors = [];
-if ($name === '' || strlen($name) > 100) {
-    $errors[] = 'Please enter your full name.';
-}
-if ($phone === '' || !preg_match('/^[0-9+\-\s()]{7,20}$/', $phone)) {
-    $errors[] = 'Please enter a valid phone number.';
-}
-if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'Please enter a valid email address.';
-}
-if ($message === '' || strlen($message) > 6000) {
-    $errors[] = 'Please write your message.';
-}
+        </div>
+    </section>
 
-if (!empty($errors)) {
-    http_response_code(422);
-    echo json_encode(['success' => false, 'message' => implode(' ', $errors)]);
-    exit;
-}
+    <section class="max-w-site mx-auto px-5 md:px-10 pb-24 grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12">
 
-$messageForStorage = str_replace(["\r\n", "\r", "\n"], ' | ', trim($message));
+        <!-- CONTACT INFO -->
+        <div class="reveal flex flex-col gap-8">
+            <div>
+                <h3 class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold mb-2">Email</h3>
+                <a href="mailto:<?php echo SITE_EMAIL; ?>" class="font-headline text-xl text-primary break-all"><?php echo SITE_EMAIL; ?></a>
+            </div>
+            <div>
+                <h3 class="font-body text-xs tracking-[0.2em] uppercase text-highlight-gold font-semibold mb-2">WhatsApp</h3>
+                <a href="https://wa.me/<?php echo SITE_WHATSAPP; ?>" target="_blank" rel="noopener" class="font-headline text-xl text-primary">Message us on WhatsApp</a>
+            </div>
+            <p class="font-body text-sm text-on-background/60 leading-relaxed">Prefer to reach a specific center directly? Use the phone numbers listed under "Our Locations" above.</p>
+        </div>
 
-// 1) Log to CSV — the reliable backup. Always attempted first, regardless
-//    of whether the email send below succeeds.
-$dataDir = __DIR__ . '/../data';
-if (!is_dir($dataDir)) {
-    @mkdir($dataDir, 0755, true);
-}
-$logFile = $dataDir . '/inquiries.csv';
-$isNewFile = !file_exists($logFile);
-$fp = @fopen($logFile, 'a');
-if ($fp) {
-    if ($isNewFile) {
-        fputcsv($fp, ['Timestamp', 'Name', 'Phone', 'Email', 'Message']);
-    }
-    fputcsv($fp, [date('Y-m-d H:i:s'), $name, $phone, $email, $messageForStorage]);
-    fclose($fp);
-}
+        <!-- CONTACT FORM — submits to api/contact.php (validates, logs to
+             data/inquiries.csv, and attempts an email notification). -->
+        <form id="contact-form" action="api/contact.php" method="POST" class="reveal glass-card p-8 md:p-10 rounded-card flex flex-col gap-5">
+            <!-- Honeypot: hidden from real users via CSS below, bots often fill it in -->
+            <div style="position:absolute; left:-9999px;" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div>
+                <label for="name" class="font-body text-sm text-on-background/70 block mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required
+                       class="w-full px-4 py-3 rounded-card bg-background border border-outline-variant focus:border-primary outline-none transition-colors font-body">
+            </div>
+            <div>
+                <label for="phone" class="font-body text-sm text-on-background/70 block mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required
+                       class="w-full px-4 py-3 rounded-card bg-background border border-outline-variant focus:border-primary outline-none transition-colors font-body">
+            </div>
+            <div>
+                <label for="email" class="font-body text-sm text-on-background/70 block mb-2">Email (optional)</label>
+                <input type="email" id="email" name="email"
+                       class="w-full px-4 py-3 rounded-card bg-background border border-outline-variant focus:border-primary outline-none transition-colors font-body">
+            </div>
+            <div>
+                <label for="message" class="font-body text-sm text-on-background/70 block mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" required
+                          class="w-full px-4 py-3 rounded-card bg-background border border-outline-variant focus:border-primary outline-none transition-colors font-body resize-none"></textarea>
+            </div>
+            <button type="submit" class="bg-primary text-on-primary px-8 py-3.5 rounded-card font-semibold hover:bg-primary-deep transition-colors">
+                Send Message
+            </button>
+            <p id="contact-form-error" class="font-body text-xs text-red-600 text-center hidden"></p>
+            <p class="font-body text-xs text-on-background/50 text-center">Your information will be kept completely confidential.</p>
+        </form>
 
-// 2) Send via Gmail SMTP.
-$mailSent = false;
-$mailError = '';
+    </section>
 
-if (SMTP_APP_PASSWORD === 'PASTE_16_CHARACTER_APP_PASSWORD_HERE') {
-    $mailError = 'SMTP_APP_PASSWORD not yet configured in includes/config.php.';
-} else {
-    // 2a) Notification to the clinic
-    $mail = new PHPMailer(true);
-    try {
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = SMTP_USER;
-        $mail->Password   = SMTP_APP_PASSWORD;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+</main>
 
-        $mail->setFrom(SMTP_USER, SITE_NAME);
-        $mail->addAddress(CONTACT_FORM_TO);
-        if ($email !== '') {
-            $mail->addReplyTo($email, $name);
-        }
-
-        $mail->Subject = 'New Enquiry - ' . SITE_NAME;
-        $mail->Body    = "Name: $name\n"
-                        . "Phone: $phone\n"
-                        . "Email: " . ($email !== '' ? $email : '—') . "\n\n"
-                        . "Message:\n" . trim($message) . "\n\n"
-                        . "Time: " . date('d M Y, h:i A');
-
-        $mail->send();
-        $mailSent = true;
-    } catch (PHPMailerException $e) {
-        $mailError = $mail->ErrorInfo;
-    }
-
-    // 2b) Designed auto-reply confirmation to the visitor — only possible if
-    // they gave an email address (it's an optional field on the form).
-    if ($email !== '') {
-        $reply = new PHPMailer(true);
-        try {
-            $reply->isSMTP();
-            $reply->Host       = 'smtp.gmail.com';
-            $reply->SMTPAuth   = true;
-            $reply->Username   = SMTP_USER;
-            $reply->Password   = SMTP_APP_PASSWORD;
-            $reply->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $reply->Port       = 587;
-
-            $reply->setFrom(SMTP_USER, SITE_NAME);
-            $reply->addAddress($email, $name);
-            $reply->addReplyTo(CONTACT_FORM_TO, SITE_NAME);
-
-            $logoCid = 'jrflogo';
-            $logoPath = __DIR__ . '/../assets/img/logo.jpeg';
-            if (file_exists($logoPath)) {
-                $reply->addEmbeddedImage($logoPath, $logoCid);
-            }
-
-            $reply->isHTML(true);
-            $reply->Subject = 'We\'ve received your message — ' . SITE_NAME;
-
-            $safeName    = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-            $safeMessage = nl2br(htmlspecialchars(trim($message), ENT_QUOTES, 'UTF-8'));
-            $logoImgTag  = file_exists($logoPath) ? "<img src=\"cid:{$logoCid}\" alt=\"" . SITE_NAME . "\" width=\"56\" height=\"56\" style=\"display:block;border-radius:50%;\">" : '';
-
-            $reply->Body = <<<HTML
-<!DOCTYPE html>
-<html>
-<body style="margin:0;padding:0;background-color:#f4faff;font-family:Arial,Helvetica,sans-serif;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4faff;padding:32px 16px;">
-        <tr>
-            <td align="center">
-                <table role="presentation" width="100%" style="max-width:520px;background-color:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e3f0f8;">
-
-                    <tr>
-                        <td style="background-color:#1B3A2E;padding:28px 32px;">
-                            <table role="presentation" width="100%"><tr>
-                                <td width="56">{$logoImgTag}</td>
-                                <td style="padding-left:14px;">
-                                    <span style="color:#ffffff;font-size:18px;font-weight:bold;">Jeevan Rekha Foundation</span><br>
-                                    <span style="color:#D4AF37;font-size:11px;letter-spacing:1px;text-transform:uppercase;">De-Addiction Center</span>
-                                </td>
-                            </tr></table>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding:32px;">
-                            <h1 style="margin:0 0 12px;color:#111d23;font-size:20px;">Thank you, {$safeName}.</h1>
-                            <p style="margin:0 0 20px;color:#3e4945;font-size:14px;line-height:1.6;">
-                                We've received your message and a member of our team will get back to you shortly. Every conversation with us is completely confidential.
-                            </p>
-
-                            <table role="presentation" width="100%" style="background-color:#f4faff;border-left:4px solid #006953;border-radius:6px;margin-bottom:24px;">
-                                <tr><td style="padding:16px 18px;">
-                                    <p style="margin:0 0 6px;color:#006953;font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;">Your Message</p>
-                                    <p style="margin:0;color:#111d23;font-size:14px;line-height:1.6;">{$safeMessage}</p>
-                                </td></tr>
-                            </table>
-
-                            <p style="margin:0 0 8px;color:#3e4945;font-size:14px;">Need urgent help? Reach us directly:</p>
-                            <p style="margin:0 0 4px;color:#111d23;font-size:14px;">📞 <a href="tel:+919296785775" style="color:#006953;text-decoration:none;">92967 85775</a></p>
-                            <p style="margin:0;color:#111d23;font-size:14px;">💬 <a href="https://wa.me/919296785775" style="color:#006953;text-decoration:none;">WhatsApp us</a></p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="background-color:#f4faff;padding:18px 32px;border-top:1px solid #e3f0f8;">
-                            <p style="margin:0;color:#3e4945;font-size:11px;">
-                                Jeevan Rekha Foundation · Purvi Bypass Road, Jaipalpatti, Madhepura, Bihar - 852113
-                            </p>
-                        </td>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
-HTML;
-
-            $reply->AltBody = "Thank you, {$name}.\n\n"
-                . "We've received your message and a member of our team will get back to you shortly.\n\n"
-                . "Your message:\n" . trim($message) . "\n\n"
-                . "Need urgent help? Call " . SITE_PHONE_DISPLAY . " or WhatsApp us: https://wa.me/" . SITE_WHATSAPP . "\n\n"
-                . SITE_NAME . " — " . SITE_ADDRESS;
-
-            $reply->send();
-        } catch (PHPMailerException $e) {
-            // Confirmation email failing shouldn't block the form submission —
-            // the clinic notification above is the important one. Just log it.
-            error_log('[contact form] Visitor confirmation email failed: ' . $reply->ErrorInfo);
-        }
-    }
-}
-
-// Log any send failure alongside the CSV backup so it's easy to spot during setup.
-if (!$mailSent && $mailError !== '') {
-    error_log('[contact form] Gmail SMTP send failed: ' . $mailError);
-}
-
-// 3) WhatsApp notifications via Meta's WhatsApp Cloud API — one to the admin,
-// one confirming receipt to the visitor. Both require approved message
-// templates (see includes/config.php comments). Skips silently until
-// META_WA_* constants are filled in — same fail-safe pattern as email above,
-// never blocks the form.
-
-function send_whatsapp_template($toNumber, $templateName, $bodyParams, $label) {
-    $payload = [
-        'messaging_product' => 'whatsapp',
-        'to' => $toNumber,
-        'type' => 'template',
-        'template' => [
-            'name' => $templateName,
-            'language' => ['code' => 'en_US'],
-            'components' => [[
-                'type' => 'body',
-                'parameters' => array_map(function ($p) { return ['type' => 'text', 'text' => $p]; }, $bodyParams),
-            ]],
-        ],
-    ];
-
-    $ch = curl_init('https://graph.facebook.com/v19.0/' . META_WA_PHONE_NUMBER_ID . '/messages');
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST => true,
-        CURLOPT_HTTPHEADER => [
-            'Authorization: Bearer ' . META_WA_ACCESS_TOKEN,
-            'Content-Type: application/json',
-        ],
-        CURLOPT_POSTFIELDS => json_encode($payload),
-        CURLOPT_TIMEOUT => 8,
-    ]);
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $curlError = curl_error($ch);
-    curl_close($ch);
-
-    if ($curlError !== '' || $httpCode >= 300) {
-        error_log("[contact form] WhatsApp ({$label}) failed (HTTP {$httpCode}): " . ($curlError ?: $response));
-    }
-}
-
-// Indian mobile numbers are typically entered as 10 digits with no country
-// code — assume +91 when that's the case. Adjust here if you expand beyond India.
-function normalize_whatsapp_number($rawPhone) {
-    $digits = preg_replace('/\D/', '', $rawPhone);
-    if (strlen($digits) === 10) {
-        $digits = '91' . $digits;
-    }
-    return $digits;
-}
-
-$placeholders = [
-    META_WA_PHONE_NUMBER_ID === 'PASTE_PHONE_NUMBER_ID_HERE',
-    META_WA_ACCESS_TOKEN === 'PASTE_PERMANENT_ACCESS_TOKEN_HERE',
-    META_WA_ADMIN_NUMBER === 'PASTE_ADMIN_WHATSAPP_NUMBER_HERE',
-];
-if (!in_array(true, $placeholders, true)) {
-    // 3a) Notify the admin — template params must match {{1}}, {{2}}, {{3}}
-    // in the approved META_WA_TEMPLATE_NAME template.
-    $waMessageParam = mb_substr(trim($message), 0, 300); // WhatsApp template params have a length limit
-    send_whatsapp_template(META_WA_ADMIN_NUMBER, META_WA_TEMPLATE_NAME, [$name, $phone, $waMessageParam], 'admin notification');
-
-    // 3b) Confirm receipt to the visitor — template params must match {{1}}
-    // in the approved META_WA_CONFIRMATION_TEMPLATE_NAME template.
-    $visitorWaNumber = normalize_whatsapp_number($phone);
-    if ($visitorWaNumber !== '') {
-        send_whatsapp_template($visitorWaNumber, META_WA_CONFIRMATION_TEMPLATE_NAME, [$name], 'visitor confirmation');
-    }
-}
-
-// Report success either way — the CSV write is the source of truth,
-// so a misconfigured or temporarily down mail server never loses the enquiry.
-echo json_encode(['success' => true, 'message' => 'Thank you! We will contact you shortly.']);
+<?php include 'includes/footer.php'; ?>
