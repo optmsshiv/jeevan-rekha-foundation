@@ -2,29 +2,17 @@
 
 // Page loader — hide once everything (including images) has finished loading.
 // A small minimum-visible-time avoids an ugly flash on fast connections.
-// Hides via inline styles (not just a CSS class) so it can't get stuck
-// visible due to a stale/cached style.css missing the .loader-hidden rule —
-// and sets display:none after the fade so it's fully out of the layout.
 (function () {
     var loader = document.getElementById('page-loader');
     if (!loader) return;
-    var minVisibleMs = 300;
+    var minVisibleMs = 400;
     var start = Date.now();
-    var hidden = false;
 
     function hideLoader() {
-        if (hidden) return;
-        hidden = true;
         var elapsed = Date.now() - start;
         var wait = Math.max(0, minVisibleMs - elapsed);
         setTimeout(function () {
             loader.classList.add('loader-hidden');
-            loader.style.opacity = '0';
-            loader.style.visibility = 'hidden';
-            loader.style.pointerEvents = 'none';
-            setTimeout(function () {
-                loader.style.display = 'none';
-            }, 500);
         }, wait);
     }
 
@@ -32,10 +20,10 @@
         hideLoader();
     } else {
         window.addEventListener('load', hideLoader);
+        // Safety net: never let the loader block the site for more than 4s
+        // (e.g. a slow or missing image), even if the load event is delayed.
+        setTimeout(hideLoader, 4000);
     }
-    // Hard safety net — never let the loader block the site for more than
-    // 2.5s no matter what (slow image, stalled load event, etc.).
-    setTimeout(hideLoader, 2500);
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
