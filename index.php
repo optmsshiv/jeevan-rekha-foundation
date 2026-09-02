@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
-$page_title = 'De-Addiction Center in Madhepura, Bihar';
-$page_description = 'Jeevan Rekha Foundation is a trusted de-addiction and rehabilitation center in Madhepura, Bihar, offering medical detox, counselling, yoga, and family support for lasting recovery.';
+$page_title = 'Jeevan Rekha Foundation | मधेपुरा का सबसे अच्छा नशा मुक्ति केंद्र | Nasha Mukti Kendra Madhepura, Bihar';
+$page_description = 'Jeevan Rekha Foundation मधेपुरा, बिहार का सर्वश्रेष्ठ नशा मुक्ति केंद्र (Nasha Mukti Kendra in Madhepura) है। यहाँ शराब, ड्रग्स और अन्य नशीले पदार्थों से सुरक्षित मुक्ति के लिए अनुभवी डॉक्टर, काउंसिलिंग और 24x7 केयर उपलब्ध है।';
 $current_page = 'home';
 ?>
     <!-- Top Contact Bar — index page only, sits above the shared navbar -->
@@ -47,9 +47,16 @@ include 'includes/navbar.php';
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#924538" stroke-width="2.5" class="shrink-0"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
                     24×7 Emergency Admission Available
                 </span>
+                <!-- NOTE for dev: the above is a temporary alert banner. If you want to keep it permanently, consider moving it into the header.php file so it appears on all pages.
                     <h1 class="font-headline text-3xl md:text-5xl leading-[1.25] text-on-background mb-6">
                         Evidence-Based Recovery.<br><span class="text-primary">Scientific Excellence.</span>
+                    </h1>-->
+
+                    <h1 class="font-headline text-3xl md:text-5xl leading-[1.25] text-on-background mb-6">
+                        Jeevan Rekha Foundation<br><span class="text-primary" style="font-size: 0.6em; display: block; margin-top: 10px;">मधेपुरा का विश्वसनीय नशा मुक्ति केंद्र</span>
                     </h1>
+
+
                     <p class="font-body text-base md:text-lg text-on-background/70 leading-relaxed mb-10 max-w-md">
                         Bihar's first rehabilitation center built on love and care, Jeevan Rekha Foundation combines modern psychiatry with holistic wellness for a clear medical path toward lasting sobriety.
                     </p>

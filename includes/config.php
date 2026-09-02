@@ -5,7 +5,7 @@
 // ---------------------------------------------------
 
 define('SITE_NAME', 'Jeevan Rekha Foundation');
-define('SITE_TAGLINE', 'De-Addiction Center');
+define('SITE_TAGLINE', 'Nasha Mukti Kendra — A New Beginning');
 define('SITE_URL', 'https://rekhafoundation.com');
 define('SITE_PHONE_DISPLAY', '92967 85775');
 define('SITE_PHONE_TEL', '+919296785775');
